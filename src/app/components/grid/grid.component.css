@@ -1,0 +1,23 @@
+.row {
+  margin-top: 15px;
+}
+
+.gridElement{
+  display: block;
+  text-decoration: none;
+}
+
+.divGridElement {
+  background-color: rebeccapurple;
+  color: white;
+  height: 150px;
+  opacity: 0.9;
+  border: 1px solid rebeccapurple;
+  border-radius: 7px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.divGridElement:hover{
+  opacity: 1;
+}

@@ -1,0 +1,8 @@
+footer {
+  background-color: var(--header-color);
+  color: var(--header-text-color);
+  margin-top: 25px;
+  padding: 1em;
+  justify-content: space-between;
+  width: 100%;
+}

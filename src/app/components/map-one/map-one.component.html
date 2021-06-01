@@ -1,0 +1,25 @@
+<div class="container-fluid main-container">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Basic Map</h1>
+      <p>Mapa bàsic sense cap funcionalitat i paràmetre</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 map-container">
+      <app-map [map]="map"></app-map>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <app-scaleline [map]="map"></app-scaleline>
+    </div>
+    <div class="col-sm-6" align="right">
+      <app-mouse-position [map]="map" positionTemplate="{x}, {y} m"></app-mouse-position>
+    </div>
+  </div>
+
+</div>
