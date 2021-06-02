@@ -16,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/openlayers-angular",
+            "outputPath": "dist/galeria-sitmun3",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "openlayers-angular:build"
+            "browserTarget": "galeria-sitmun3:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "openlayers-angular:build:production"
+              "browserTarget": "galeria-sitmun3:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "openlayers-angular:build"
+            "browserTarget": "galeria-sitmun3:build"
           }
         },
         "test": {
@@ -129,5 +129,5 @@
       }
     }
   },
-  "defaultProject": "openlayers-angular"
+  "defaultProject": "galeria-sitmun3"
 }
