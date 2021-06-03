@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "openlayers-angular": {
+    "galeria-sitmun3": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -70,7 +70,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "openlayers-angular:build"
+            "browserTarget": "galeria-sitmun3:build"
           },
           "configurations": {
             "production": {
@@ -118,11 +118,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "openlayers-angular:serve"
+            "devServerTarget": "galeria-sitmun3:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "openlayers-angular:serve:production"
+              "devServerTarget": "galeria-sitmun3:serve:production"
             }
           }
         }
