@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
@@ -12,8 +13,14 @@ import OSM from 'ol/source/OSM';
 export class MapOneComponent implements OnInit {
 
   map: Map;
+  informacio: any = [];
+
+  constructor(private httpClient: HttpClient){}
 
   ngOnInit(): void {
+    this.httpClient.get('https://sitmun-backend-core.herokuapp.com/api/workspace').subscribe( data => {
+      this.informacio = data;
+    });
     this.map = new Map({
       view: new View({
         center: [0, 0],
