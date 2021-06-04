@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MapOneComponent } from './components/map-one/map-one.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MapTwoComponent } from './components/map-two/map-two.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
     GridComponent,
     MapOneComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MapTwoComponent
   ],
   imports: [
     BrowserModule,

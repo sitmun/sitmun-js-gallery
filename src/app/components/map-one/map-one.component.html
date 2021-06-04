@@ -1,9 +1,12 @@
 <div class="container-fluid main-container">
 
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-11">
       <h1>Basic Map</h1>
       <p>Mapa bàsic sense cap funcionalitat i paràmetre</p>
+    </div>
+    <div class="col-sm-1">
+      <a routerLink="/" class="cool-link">BACK</a>
     </div>
   </div>
 
@@ -13,7 +16,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mb-2">
     <div class="col-sm-6">
       <app-scaleline [map]="map"></app-scaleline>
     </div>
@@ -23,8 +26,31 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-12">
-      <p>{{this.informacio.territories}}</p>
+    <div class="col-sm-6">
+      <b>CODI FITXER TYPESCRIPT</b>
+      <pre class="codi">
+this.map = new Map({{"{"}}
+  view: new View({{"{"}}
+    center: [0, 0],
+    zoom: 1,
+  {{"}"}}),
+  layers: [
+    new TileLayer({{"{"}}
+      source: new OSM(),
+    {{"}"}}),
+  ]
+{{"}"}});
+      </pre>
+    </div>
+    <div class="col-sm-6">
+      <b>CODI FITXER HTML</b>
+      <pre class="codi">
+<&zwj;div class="row">
+  <&zwj;div class="col-sm-12 map-container">
+    <&zwj;app-map [map]="map"><&zwj;/app-map>
+  <&zwj;/div>
+<&zwj;/div>
+      </pre>
     </div>
   </div>
 
