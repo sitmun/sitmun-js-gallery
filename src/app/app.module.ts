@@ -13,6 +13,8 @@ import { MapOneComponent } from './components/map-one/map-one.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MapTwoComponent } from './components/map-two/map-two.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { MapTwoComponent } from './components/map-two/map-two.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSelectModule
   ],
   providers: [DecimalPipe],
   bootstrap: [AppComponent]

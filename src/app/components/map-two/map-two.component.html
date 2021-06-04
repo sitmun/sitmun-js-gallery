@@ -1,1 +1,30 @@
-<p>map-two works!</p>
+<div class="container-fluid main-container">
+  <div class="row">
+    <div class="col-sm-11">
+      <h1>Territory Map</h1>
+      <p>Mapa d'un territori en concret amb informació extreta de la base de dades de sitmun</p>
+    </div>
+    <div class="col-sm-1">
+      <a routerLink="/" class="cool-link">BACK</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form>
+        <select class="mat-select">
+          <option *ngFor="let territori of this.informacio.territories" [value]="territori.id">
+            {{ territori.name }}
+          </option>
+        </select>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <p>[MAPA DEL TERRITORI]</p>
+    </div>
+  </div>
+
+</div>
