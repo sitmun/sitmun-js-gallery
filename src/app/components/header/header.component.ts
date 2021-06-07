@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  estatSessio = 'Iniciar Sessió';
+  logged: false;
+
   constructor() { }
 
   ngOnInit(): void {
+    if (this.logged) {
+      this.estatSessio = 'Tancar Sessió';
+    }
   }
 
 }

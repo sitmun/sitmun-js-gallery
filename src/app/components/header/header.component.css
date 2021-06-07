@@ -8,3 +8,17 @@ header .title {
   font-size: 28px;
   font-weight: bold;
 }
+
+.linkUser {
+  background-color: white;
+  text-decoration: none;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: var(--header-color);
+}
+
+.linkUser:hover{
+  background-color: lightgrey;
+  border-color: lightgrey;
+}
