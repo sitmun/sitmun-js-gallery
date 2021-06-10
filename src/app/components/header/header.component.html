@@ -5,7 +5,8 @@
         <h2 class="title">SITMUN 3 - Demo Gallery</h2>
       </div>
       <div class="col-sm-2">
-        <a href="/" class="linkUser">{{ this.estatSessio }}</a>
+        <a (click)="login()" *ngIf="!authService.logIn" class="linkUser">Iniciar Sessió</a>
+        <a (click)="logout()" *ngIf="authService.logIn" class="linkUser">Tancar Sessió</a>
       </div>
     </div>
   </div>

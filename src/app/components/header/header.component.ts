@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,15 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  estatSessio = 'Iniciar Sessió';
-  logged: false;
+  username = 'user12';
+  password = 'user12';
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
-    if (this.logged) {
-      this.estatSessio = 'Tancar Sessió';
-    }
+    console.log(this.authService.logIn);
+  }
+
+  login(): void {
+    console.log('logging in...');
+    this.authService.login(this.username, this.password);
+  }
+
+  logout(): void {
+    console.log('logging out...');
+    this.authService.logout();
   }
 
 }

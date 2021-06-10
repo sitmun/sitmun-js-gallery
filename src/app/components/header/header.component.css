@@ -4,9 +4,11 @@ header {
   margin-bottom: 25px;
   padding: 2em;
 }
+
 header .title {
   font-size: 28px;
   font-weight: bold;
+  margin: 0;
 }
 
 .linkUser {
@@ -16,6 +18,7 @@ header .title {
   border: 1px solid white;
   border-radius: 5px;
   color: var(--header-color);
+  cursor: pointer;
 }
 
 .linkUser:hover{
