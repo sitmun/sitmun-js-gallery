@@ -1,8 +1,8 @@
 <div class="container-fluid main-container">
   <div class="row">
     <div class="col-sm-11">
-      <h1>Territory Map</h1>
-      <p>Mapa d'un territori en concret amb informació extreta de la base de dades de sitmun</p>
+      <h1>Lectura WMS</h1>
+      <p>Com realitzar la lectura d'un WMS i plasmar-la en una capa d'un mapa.</p>
     </div>
     <div class="col-sm-1">
       <a routerLink="/" class="cool-link">BACK</a>
@@ -22,8 +22,8 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-12">
-      <p>[MAPA DEL TERRITORI]</p>
+    <div class="col-sm-12 map-container">
+      <app-map [map]="map"></app-map>
     </div>
   </div>
 

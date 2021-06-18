@@ -23,4 +23,7 @@ export class AuthService {
   public get logIn(): boolean {
     return (localStorage.getItem('token') !== null);
   }
+  public get getTokenAPI(): string {
+    return ('Bearer ' + localStorage.getItem('token'));
+  }
 }

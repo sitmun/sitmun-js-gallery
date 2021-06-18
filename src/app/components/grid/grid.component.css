@@ -2,6 +2,10 @@
   margin-top: 15px;
 }
 
+.container-grid{
+  min-height: 70vh;
+}
+
 .gridElement{
   display: block;
   text-decoration: none;
