@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import SitmunJS from '@sitmun/sitmun-js';
 
 @Component({
   selector: 'app-header',
@@ -10,21 +10,42 @@ export class HeaderComponent implements OnInit {
 
   username = 'user12';
   password = 'user12';
+  paraulaInici;
+  SitmunJsClient = new SitmunJS({ basePath: 'https://sitmun-backend-core.herokuapp.com/' });
 
-  constructor(public authService: AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    console.log(this.authService.logIn);
+    if (this.SitmunJsClient.isLogged()){
+      this.paraulaInici = 'Iniciar Sessió';
+    }
+    else{
+      this.paraulaInici = 'Tancar Sessió';
+    }
   }
 
   login(): void {
     console.log('logging in...');
-    this.authService.login(this.username, this.password);
+    this.SitmunJsClient.login('user12', 'user12').then(() => {
+      console.log('Successful');
+      this.paraulaInici = 'Tancar Sessió';
+    });
   }
 
   logout(): void {
     console.log('logging out...');
-    this.authService.logout();
+    this.SitmunJsClient.logout();
+    this.paraulaInici = 'Iniciar Sessió';
+    console.log('Successful');
+  }
+
+  loginout(): void{
+    if (this.paraulaInici === 'Iniciar Sessió'){
+      this.login();
+    }
+    else {
+      this.logout();
+    }
   }
 
 }
