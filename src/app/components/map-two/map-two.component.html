@@ -1,4 +1,5 @@
 <div class="container-fluid main-container">
+
   <div class="row">
     <div class="col-sm-11">
       <h1>Lectura WMS</h1>
@@ -9,19 +10,7 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-12">
-      <form>
-        <select class="mat-select">
-          <option *ngFor="let territori of this.informacio.territories" [value]="territori.id">
-            {{ territori.name }}
-          </option>
-        </select>
-      </form>
-    </div>
-  </div>
-
-  <div class="row">
+  <div *ngIf="this.maxY && this.minY && this.minX && this.maxX && this.centreX && this.centreY" class="row">
     <div class="col-sm-12 map-container">
       <app-map [map]="map"></app-map>
     </div>

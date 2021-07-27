@@ -17,10 +17,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.SitmunJsClient.isLogged()){
-      this.paraulaInici = 'Iniciar Sessió';
+      this.paraulaInici = 'Tancar Sessió';
     }
     else{
-      this.paraulaInici = 'Tancar Sessió';
+      this.paraulaInici = 'Iniciar Sessió';
     }
   }
 

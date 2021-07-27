@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "~11.2.5",
     "@angular/router": "~11.2.5",
     "@popperjs/core": "^2.9.2",
-    "@sitmun/sitmun-js": "^0.0.4",
+    "@sitmun/sitmun-js": "0.0.6",
     "bootstrap": "^5.0.1",
     "jquery": "^3.6.0",
     "npm": "^7.18.1",
@@ -31,7 +31,8 @@
     "roboto-fontface": "^0.10.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.3"
+    "zone.js": "~0.11.3",
+    "proj4": "2.7.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.3",

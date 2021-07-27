@@ -15,6 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MapTwoComponent } from './components/map-two/map-two.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { SelectorComponent } from './components/selector/selector.component';
+import { ZoomComponent } from './components/zoom/zoom.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { MatSelectModule } from '@angular/material/select';
     MapOneComponent,
     HeaderComponent,
     FooterComponent,
-    MapTwoComponent
+    MapTwoComponent,
+    SelectorComponent,
+    ZoomComponent
   ],
   imports: [
     BrowserModule,
