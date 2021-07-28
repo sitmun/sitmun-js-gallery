@@ -16,4 +16,61 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-sm-6">
+      <b>CODI FITXER TYPESCRIPT</b>
+      <pre class="codi">
+proj4.defs(
+      'EPSG:25831',
+      '+proj=utm +zone=31 +ellps=GRS80 +units=m +no_defs'
+    );
+    register(proj4);
+    const myProjection = new Projection({{"{"}}
+        code: 'EPSG:25831',
+        extent: [this.minX, this.maxX, this.minY, this.maxY]
+        {{"}"}});
+    const myExtent = [this.minX, this.maxX, this.minY, this.maxY];
+
+    const myLayers = [
+      new TileLayer({{"{"}}
+        extent: myExtent,
+        source: new OSM(),
+        {{"}"}}),
+      new ImageLayer({{"{"}}
+        extent: myExtent,
+        source: new ImageWMS({{"{"}}
+          url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
+          crossOrigin: 'anonymous',
+          serverType: 'mapserver',
+          projection: myProjection,
+          params: {{"{"}}'LAYERS': 'MTE50_Disponibilitat'{{"}"}},
+        {{"}"}}),
+        {{"}"}})
+    ];
+
+    this.map = new Map({{"{"}}
+        controls: [],
+        layers: myLayers,
+        target: 'map',
+        view: new View({{"{"}}
+        projection: myProjection,
+        extent: myExtent,
+        center: [this.centreX, this.centreY],
+        zoom: 10,
+        {{"}"}})
+        {{"}"}});
+      </pre>
+    </div>
+    <div class="col-sm-6">
+      <b>CODI FITXER HTML</b>
+      <pre class="codi">
+<&zwj;div class="row">
+  <&zwj;div class="col-sm-12 map-container">
+    <&zwj;app-map [map]="map"><&zwj;/app-map>
+  <&zwj;/div>
+<&zwj;/div>
+      </pre>
+    </div>
+  </div>
+
 </div>

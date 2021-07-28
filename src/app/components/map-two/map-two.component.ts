@@ -48,19 +48,24 @@ export class MapTwoComponent implements OnInit {
       this.maxY = data.territory.extent.maxY;
       console.log(this.centreX, this.centreY, this.minX, this.maxX, this.minY, this.maxY);
     });
+    proj4.defs(
+      'EPSG:25831',
+      '+proj=utm +zone=31 +ellps=GRS80 +units=m +no_defs'
+    );
+    register(proj4);
     const myProjection = new Projection({
       code: 'EPSG:25831',
       extent: [this.minX, this.maxX, this.minY, this.maxY]
     });
-    const extent = [this.minX, this.maxX, this.minY, this.maxY];
+    const myExtent = [this.minX, this.maxX, this.minY, this.maxY];
 
     const myLayers = [
       new TileLayer({
-        extent: extent,
+        extent: myExtent,
         source: new OSM(),
       }),
       new ImageLayer({
-        extent: extent,
+        extent: myExtent,
         source: new ImageWMS({
           url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
           crossOrigin: 'anonymous',
@@ -77,7 +82,7 @@ export class MapTwoComponent implements OnInit {
       target: 'map',
       view: new View({
         projection: myProjection,
-        extent: extent,
+        extent: myExtent,
         center: [this.centreX, this.centreY],
         zoom: 10,
       })
