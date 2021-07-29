@@ -33,11 +33,6 @@ export class MapTwoComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   async ngOnInit() {
-    proj4.defs(
-      'EPSG:25831',
-      '+proj=utm +zone=31 +ellps=GRS80 +units=m +no_defs'
-    );
-    register(proj4);
     // Mirar dependencies
     await this.SitmunJsClient.workspaceApplication(1, 41).then((data) => {
       this.centreX = data.territory.center.x;
@@ -71,7 +66,7 @@ export class MapTwoComponent implements OnInit {
           crossOrigin: 'anonymous',
           serverType: 'mapserver',
           projection: myProjection,
-          params: {'LAYERS': 'MTE50_Disponibilitat'},
+          params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'},
         }),
       })
     ];
