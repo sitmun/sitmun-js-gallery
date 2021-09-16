@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { SelectorComponent } from './components/selector/selector.component';
 import { ZoomComponent } from './components/zoom/zoom.component';
+import { PanComponent } from './components/pan/pan.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ZoomComponent } from './components/zoom/zoom.component';
     FooterComponent,
     MapTwoComponent,
     SelectorComponent,
-    ZoomComponent
+    ZoomComponent,
+    PanComponent
   ],
   imports: [
     BrowserModule,

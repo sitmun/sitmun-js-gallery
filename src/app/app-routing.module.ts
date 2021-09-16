@@ -5,13 +5,15 @@ import { MapOneComponent } from './components/map-one/map-one.component';
 import { MapTwoComponent } from './components/map-two/map-two.component';
 import {SelectorComponent} from './components/selector/selector.component';
 import {ZoomComponent} from './components/zoom/zoom.component';
+import {PanComponent} from './components/pan/pan.component';
 
 const routes: Routes = [
   { path: '', component: GridComponent },
   { path: '1', component: MapOneComponent },
   { path: '2', component: MapTwoComponent },
   { path: 'select', component: SelectorComponent},
-  { path: 'zoom', component: ZoomComponent }
+  { path: 'zoom', component: ZoomComponent },
+  { path: 'pan', component: PanComponent }
 ];
 
 @NgModule({

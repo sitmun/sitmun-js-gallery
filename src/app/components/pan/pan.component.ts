@@ -13,13 +13,12 @@ import proj4 from 'proj4';
 import SitmunJS from '@sitmun/sitmun-js';
 import { transform, transformExtent } from 'ol/proj';
 
-
 @Component({
-  selector: 'app-zoom',
-  templateUrl: './zoom.component.html',
-  styleUrls: ['./zoom.component.css']
+  selector: 'app-pan',
+  templateUrl: './pan.component.html',
+  styleUrls: ['./pan.component.css']
 })
-export class ZoomComponent implements OnInit {
+export class PanComponent implements OnInit {
 
   map: Map;
   SitmunJsClient = new SitmunJS({ basePath: 'https://sitmun-backend-core.herokuapp.com/' });
@@ -106,5 +105,4 @@ export class ZoomComponent implements OnInit {
       this.map.addControl(zoomslider);
     }
   }
-
 }
