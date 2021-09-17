@@ -24,4 +24,52 @@
       <app-mouse-position [map]="map" positionTemplate="{x}, {y} m"></app-mouse-position>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <b>CODI FITXER TYPESCRIPT</b>
+      <pre class="codi">
+
+const varZoomSlider = 1; //Variable Task API
+const zoomSlider = new ZoomSlider();
+const zoomButtons = new Zoom();
+const zoomClick = new DoubleClickZoom();
+
+this.map = new Map({{"{"}}
+  controls: [],
+  interactions: defaultInteractions({{"{"}}
+    doubleClickZoom: false,
+    keyboardZoom: false,
+    mouseWheelZoom: false
+  }),
+  layers: myLayers,
+  target: 'map',
+  view: new View({{"{"}}
+    projection: myProjection,
+    extent: myExtent,
+    center: [this.centreX, this.centreY],
+    zoom: 10
+  {{"}"}})
+{{"}"}});
+
+// Condicionals amb els controls que afegeixen
+if (varZoomSlider) {{"{"}}
+    this.map.addControl(zoomSlider);
+    this.map.addControl(zoomButtons);
+    this.map.addInteraction(zoomClick);
+}
+      </pre>
+    </div>
+    <div class="col-sm-6">
+      <b>CODI FITXER HTML</b>
+      <pre class="codi">
+<&zwj;div class="row">
+  <&zwj;div class="col-sm-12 map-container">
+    <&zwj;app-map [map]="map"><&zwj;/app-map>
+  <&zwj;/div>
+<&zwj;/div>
+      </pre>
+    </div>
+  </div>
+
 </div>

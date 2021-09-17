@@ -4,6 +4,7 @@ import View from 'ol/View';
 import OSM from 'ol/source/OSM';
 import { defaults as defaultInteractions } from 'ol/interaction';
 import { ZoomSlider } from 'ol/control';
+import { Zoom } from 'ol/control';
 import 'ol/ol.css';
 import ImageWMS from 'ol/source/ImageWMS';
 import Projection from 'ol/proj/Projection';
@@ -12,7 +13,7 @@ import { register } from 'ol/proj/proj4';
 import proj4 from 'proj4';
 import SitmunJS from '@sitmun/sitmun-js';
 import { transform, transformExtent } from 'ol/proj';
-
+import DoubleClickZoom from 'ol/interaction/DoubleClickZoom';
 
 @Component({
   selector: 'app-zoom',
@@ -46,8 +47,13 @@ export class ZoomComponent implements OnInit {
     const myCentre = [this.centreX, this.centreY];
 
     // Controls de ZOOM
-    const varZoomSlider = 1;
-    const zoomslider = new ZoomSlider();
+    // varZoomSlider = zoomSlider(data) <--- es la más sencilla
+    // varZoomSlider = data.getDefaultZoomSlider()
+
+    const varZoomSlider = 1; // Valor hauria de venir de la API
+    const zoomSlider = new ZoomSlider();
+    const zoomButtons = new Zoom();
+    const zoomClick = new DoubleClickZoom();
 
     proj4.defs(
       'EPSG:25831',
@@ -83,14 +89,12 @@ export class ZoomComponent implements OnInit {
     ];
 
     this.map = new Map({
-      controls: [],
+      controls: [],  // getDefaultInteractionsForTheWorkspace(data)
       interactions: defaultInteractions({
-        doubleClickZoom: false,
-        dragAndDrop: false,
-        dragPan: false,
-        keyboardPan: false,
+        doubleClickZoom: false, // shouldDoubleClickZoomBeEnabled(data) { return false }
         keyboardZoom: false,
-        mouseWheelZoom: false
+        mouseWheelZoom: false,
+        dragPan: false
       }),
       layers: myLayers,
       target: 'map',
@@ -103,7 +107,9 @@ export class ZoomComponent implements OnInit {
 
     // Condicionals amb els controls que afegeixen
     if (varZoomSlider) {
-      this.map.addControl(zoomslider);
+      this.map.addControl(zoomSlider);
+      this.map.addControl(zoomButtons);
+      this.map.addInteraction(zoomClick);
     }
   }
 

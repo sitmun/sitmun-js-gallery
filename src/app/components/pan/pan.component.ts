@@ -3,7 +3,6 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import OSM from 'ol/source/OSM';
 import { defaults as defaultInteractions } from 'ol/interaction';
-import { ZoomSlider } from 'ol/control';
 import 'ol/ol.css';
 import ImageWMS from 'ol/source/ImageWMS';
 import Projection from 'ol/proj/Projection';
@@ -12,6 +11,8 @@ import { register } from 'ol/proj/proj4';
 import proj4 from 'proj4';
 import SitmunJS from '@sitmun/sitmun-js';
 import { transform, transformExtent } from 'ol/proj';
+import DragPan from 'ol/interaction/DragPan';
+import KeyboardPan from 'ol/interaction/KeyboardPan';
 
 @Component({
   selector: 'app-pan',
@@ -44,9 +45,10 @@ export class PanComponent implements OnInit {
     const myExtent = [this.minX, this.maxX, this.minY, this.maxY];
     const myCentre = [this.centreX, this.centreY];
 
-    // Controls de ZOOM
-    const varZoomSlider = 1;
-    const zoomslider = new ZoomSlider();
+    // Controls de PAN
+    const varPanTask = 1; // Valor que ve de l'API
+    const dragPan = new DragPan();
+    const keyboardPan = new KeyboardPan();
 
     proj4.defs(
       'EPSG:25831',
@@ -84,12 +86,9 @@ export class PanComponent implements OnInit {
     this.map = new Map({
       controls: [],
       interactions: defaultInteractions({
-        doubleClickZoom: false,
         dragAndDrop: false,
         dragPan: false,
-        keyboardPan: false,
-        keyboardZoom: false,
-        mouseWheelZoom: false
+        keyboardPan: false
       }),
       layers: myLayers,
       target: 'map',
@@ -101,8 +100,9 @@ export class PanComponent implements OnInit {
     });
 
     // Condicionals amb els controls que afegeixen
-    if (varZoomSlider) {
-      this.map.addControl(zoomslider);
+    if (varPanTask) {
+      this.map.addInteraction(dragPan);
+      this.map.addInteraction(keyboardPan);
     }
   }
 }

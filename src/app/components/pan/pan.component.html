@@ -24,4 +24,48 @@
       <app-mouse-position [map]="map" positionTemplate="{x}, {y} m"></app-mouse-position>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <b>CODI FITXER TYPESCRIPT</b>
+      <pre class="codi">
+const varPanTask = 1; // Valor que ve de l'API
+const dragPan = new DragPan();
+const keyboardPan = <span class="imp">new KeyboardPan();</span>
+
+this.map = new Map({{"{"}}
+  controls: [],
+  interactions: defaultInteractions({{"{"}}
+    dragAndDrop: false,
+    dragPan: false,
+    keyboardPan: false
+  }),
+  layers: myLayers,
+  target: 'map',
+  view: new View({{"{"}}
+    projection: myProjection,
+    extent: myExtent,
+    center: [this.centreX, this.centreY],
+    zoom: 10
+  {{"}"}})
+{{"}"}});
+
+// Condicionals amb els controls que afegeixen
+if (varPanTask) {{"{"}}
+  this.map.addInteraction(dragPan);
+  this.map.addInteraction(keyboardPan);
+}
+      </pre>
+    </div>
+    <div class="col-sm-6">
+      <b>CODI FITXER HTML</b>
+      <pre class="codi">
+<&zwj;div class="row">
+  <&zwj;div class="col-sm-12 map-container">
+    <&zwj;app-map [map]="map"><&zwj;/app-map>
+  <&zwj;/div>
+<&zwj;/div>
+      </pre>
+    </div>
+  </div>
 </div>
