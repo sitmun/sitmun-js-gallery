@@ -30,11 +30,15 @@ export class ZoomComponent implements OnInit {
   maxX: number;
   minY: number;
   maxY: number;
+  // data: WorkspaceApplication;
 
   constructor(){}
 
   // tslint:disable-next-line:typedef
   async ngOnInit() {
+
+    // --- obtener la informacón del backend
+
     await this.SitmunJsClient.workspaceApplication(1, 41).then((data) => {
       this.centreX = data.territory.center.x;
       this.centreY = data.territory.center.y;
@@ -45,6 +49,8 @@ export class ZoomComponent implements OnInit {
     });
     const myExtent = [this.minX, this.maxX, this.minY, this.maxY];
     const myCentre = [this.centreX, this.centreY];
+
+    // tengo algo que me ha devuelto una variable "data" que prepresenta una instancia de WorkspaceAppplication
 
     // Controls de ZOOM
     // varZoomSlider = zoomSlider(data) <--- es la más sencilla
@@ -66,12 +72,14 @@ export class ZoomComponent implements OnInit {
     register(proj4);
     const myProjection = new Projection({
       code: 'EPSG:25831',
-      extent: [this.minX, this.maxX, this.minY, this.maxY]
+      extent: [this.minX, this.maxX, this.minY, this.maxY] // defaultExtent(data)
     });
     const myProjection2 = new Projection({
       code: 'EPSG:3857',
       extent: transformExtent(myExtent, 'EPSG:25831', 'EPSG:3857')
     });
+
+    // const myLAyers = backgroundLayers(data) (devuelve un array de layers)
 
     const myLayers = [
       new TileLayer({
