@@ -4,12 +4,10 @@ import ImageWMS from 'ol/source/ImageWMS';
 import Map from 'ol/Map';
 import OSM from 'ol/source/OSM';
 import View from 'ol/View';
-import Projection from 'ol/proj/Projection';
 import { Image as ImageLayer, Tile as TileLayer } from 'ol/layer';
 import { register } from 'ol/proj/proj4';
 import proj4 from 'proj4';
-import SitmunJS from '@sitmun/sitmun-js';
-import { transform, transformExtent } from 'ol/proj';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-map-two',
@@ -18,28 +16,10 @@ import { transform, transformExtent } from 'ol/proj';
 })
 export class MapTwoComponent implements OnInit {
   map: Map;
-  SitmunJsClient = new SitmunJS({ basePath: 'https://sitmun-backend-core.herokuapp.com/' });
-  centreX: number;
-  centreY: number;
-  minX: number;
-  maxX: number;
-  minY: number;
-  maxY: number;
 
-  constructor(){}
+  constructor( private utilsService: UtilsService ){}
 
-  // tslint:disable-next-line:typedef
-  async ngOnInit() {
-    await this.SitmunJsClient.workspaceApplication(1, 41).then((data) => {
-      this.centreX = data.territory.center.x;
-      this.centreY = data.territory.center.y;
-      this.minX = data.territory.extent.minX;
-      this.maxX = data.territory.extent.maxX;
-      this.minY = data.territory.extent.minY;
-      this.maxY = data.territory.extent.maxY;
-    });
-    const myExtent = [this.minX, this.maxX, this.minY, this.maxY];
-    const myCentre = [this.centreX, this.centreY];
+  ngOnInit(): any {
     proj4.defs(
       'EPSG:25831',
       '+proj=utm +zone=31 +ellps=GRS80 +units=m +no_defs'
@@ -49,14 +29,6 @@ export class MapTwoComponent implements OnInit {
       '+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs'
     );
     register(proj4);
-    const myProjection = new Projection({
-      code: 'EPSG:25831',
-      extent: [this.minX, this.maxX, this.minY, this.maxY]
-    });
-    const myProjection2 = new Projection({
-      code: 'EPSG:3857',
-      extent: transformExtent(myExtent, 'EPSG:25831', 'EPSG:3857')
-    });
 
     const myLayers = [
       new TileLayer({
@@ -67,7 +39,7 @@ export class MapTwoComponent implements OnInit {
           url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
           crossOrigin: 'anonymous',
           serverType: 'mapserver',
-          projection: myProjection,
+          projection: this.utilsService.getProjection(),
           params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'},
         }),
       })
@@ -79,8 +51,8 @@ export class MapTwoComponent implements OnInit {
       target: 'map',
       view: new View({
         projection: 'EPSG:3857',
-        center: transform(myCentre, 'EPSG:25831', 'EPSG:3857'),
-        zoom: 12,
+        center: this.utilsService.getCentre('EPSG:25831'),
+        zoom: this.utilsService.getDefaultZoom()
       })
     });
   }
