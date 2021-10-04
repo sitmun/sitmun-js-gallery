@@ -13,6 +13,7 @@ import { register } from 'ol/proj/proj4';
 import DoubleClickZoom from 'ol/interaction/DoubleClickZoom';
 import { UtilsService } from '../../services/utils.service';
 import { transformExtent } from 'ol/proj';
+import FullScreen from 'ol/control/FullScreen';
 
 @Component({
   selector: 'app-zoom',
@@ -63,8 +64,8 @@ export class ZoomComponent implements OnInit {
       interactions: defaultInteractions({
         doubleClickZoom: false,
         keyboardZoom: false,
-        mouseWheelZoom: false,
-        dragPan: false
+        mouseWheelZoom: false
+        // dragPan: false
       }),
       layers: myLayers,
       target: 'map',
@@ -81,7 +82,12 @@ export class ZoomComponent implements OnInit {
       this.map.addControl(zoomButtons);
       this.map.addInteraction(zoomClick);
       this.map.addControl(zoomExtent);
+      this.map.addControl(new FullScreen());
     }
+  }
+
+  centerMap(): void {
+    this.map.getView().setCenter(this.utilsService.getCentre('EPSG:25831'));
   }
 
 }

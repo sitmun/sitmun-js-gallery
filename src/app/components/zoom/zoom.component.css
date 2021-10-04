@@ -18,3 +18,16 @@
   color: darkorchid;
   text-decoration: none;
 }
+
+.centerButton {
+  color: white;
+  display: block;
+  background-color: rgba(0, 60, 136, 0.5);
+  font-weight: bold;
+  border-radius: 2px;
+  border: none;
+}
+
+.centerButton:hover{
+  background-color: rgba(0,60,136,0.7);
+}

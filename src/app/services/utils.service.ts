@@ -20,7 +20,7 @@ export class UtilsService {
       maxX: 4597923,
       maxY: 4605240
     },
-    zoom: 12,
+    zoom: 13,
     epsg: 'EPSG:25831',
     roles: [
       {

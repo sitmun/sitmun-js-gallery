@@ -11,6 +11,7 @@ import proj4 from 'proj4';
 import DragPan from 'ol/interaction/DragPan';
 import KeyboardPan from 'ol/interaction/KeyboardPan';
 import {UtilsService} from '../../services/utils.service';
+import {Control, defaults as defaultControls} from 'ol/control';
 
 @Component({
   selector: 'app-pan',
@@ -26,8 +27,6 @@ export class PanComponent implements OnInit {
   ngOnInit(): any {
 
     const varPanTask = 1; // Valor que ve de l'API
-    const dragPan = new DragPan();
-    const keyboardPan = new KeyboardPan();
 
     proj4.defs(
       'EPSG:25831',
@@ -72,8 +71,8 @@ export class PanComponent implements OnInit {
 
     // Condicionals amb els controls que afegeixen
     if (varPanTask) {
-      this.map.addInteraction(dragPan);
-      this.map.addInteraction(keyboardPan);
+      this.map.addInteraction(new DragPan());
+      this.map.addInteraction(new KeyboardPan());
     }
   }
 }
