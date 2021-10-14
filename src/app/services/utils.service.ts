@@ -1,6 +1,12 @@
 import {Injectable} from '@angular/core';
+import Map from 'ol/Map';
+import View from 'ol/View';
+import ImageWMS from 'ol/source/ImageWMS';
+import OSM from 'ol/source/OSM';
 import Projection from 'ol/proj/Projection';
-import { transform, transformExtent } from 'ol/proj';
+import {Image as ImageLayer, Tile as TileLayer} from 'ol/layer';
+import {transform} from 'ol/proj';
+import { defaults as defaultInteractions } from 'ol/interaction';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +42,42 @@ export class UtilsService {
     ]
   };
 
+  getMyLayers(): any {
+    return [
+      new TileLayer({
+        source: new OSM()
+      }),
+      new ImageLayer({
+        source: new ImageWMS({
+          url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
+          crossOrigin: 'anonymous',
+          serverType: 'mapserver',
+          projection: this.getProjection(),
+          params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'},
+        }),
+      })
+    ];
+  }
+
+  getMap(): any {
+    return new Map({
+      controls: [],
+      interactions: defaultInteractions({
+        doubleClickZoom: false,
+        keyboardZoom: false,
+        mouseWheelZoom: false,
+        dragPan: false
+      }),
+      layers: this.getMyLayers(),
+      target: 'map',
+      view: new View({
+        projection: 'EPSG:3857',
+        center: this.getCentre('EPSG:25831'),
+        zoom: this.getDefaultZoom()
+      })
+    });
+  }
+
   getDefaultZoom(): number {
     return this.workspaceApp.zoom;
   }
@@ -57,6 +99,10 @@ export class UtilsService {
   }
 
   hasZoomTask(): boolean {
+    return true;
+  }
+
+  hasPanTask(): boolean {
     return true;
   }
 

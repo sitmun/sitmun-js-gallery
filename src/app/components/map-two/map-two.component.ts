@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import 'ol/ol.css';
-import ImageWMS from 'ol/source/ImageWMS';
 import Map from 'ol/Map';
-import OSM from 'ol/source/OSM';
-import View from 'ol/View';
-import { Image as ImageLayer, Tile as TileLayer } from 'ol/layer';
-import { register } from 'ol/proj/proj4';
 import proj4 from 'proj4';
+import { register } from 'ol/proj/proj4';
 import { UtilsService } from '../../services/utils.service';
 
 @Component({
@@ -30,31 +26,7 @@ export class MapTwoComponent implements OnInit {
     );
     register(proj4);
 
-    const myLayers = [
-      new TileLayer({
-        source: new OSM()
-      }),
-      new ImageLayer({
-        source: new ImageWMS({
-          url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
-          crossOrigin: 'anonymous',
-          serverType: 'mapserver',
-          projection: this.utilsService.getProjection(),
-          params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'},
-        }),
-      })
-    ];
-
-    this.map = new Map({
-      controls: [],
-      layers: myLayers,
-      target: 'map',
-      view: new View({
-        projection: 'EPSG:3857',
-        center: this.utilsService.getCentre('EPSG:25831'),
-        zoom: this.utilsService.getDefaultZoom()
-      })
-    });
+    this.map = this.utilsService.getMap();
   }
 
 }

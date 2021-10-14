@@ -10,13 +10,22 @@
     </div>
   </div>
 
-  <div class="row mb-2">
+  <div class="row">
     <div class="col-sm-12 map-container">
       <app-map [map]="map"></app-map>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mb-4">
+    <div class="col-sm-6">
+      <app-scaleline [map]="map"></app-scaleline>
+    </div>
+    <div class="col-sm-6" align="right">
+      <app-mouse-position [map]="map" positionTemplate="{x}, {y} m"></app-mouse-position>
+    </div>
+  </div>
+
+  <div class="row mb-2">
     <div class="col-sm-6">
       <b>CODI FITXER TYPESCRIPT</b>
       <pre class="codi">
@@ -26,35 +35,12 @@ proj4.defs(
 );
 proj4.defs(
   'EPSG:3857',
-  '+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs'
+  '+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0
+   +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs'
 );
 register(proj4);
 
-const myLayers = [
-  new TileLayer({{"{"}}
-    source: new OSM()
-  }),
-  new ImageLayer({{"{"}}
-    source: new ImageWMS({{"{"}}
-      url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
-      crossOrigin: 'anonymous',
-      serverType: 'mapserver',
-      projection: this.utilsService.getProjection(),
-      params: {{"{"}}'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'},
-    }),
-  })
-];
-
-this.map = new Map({{"{"}}
-  controls: [],
-  layers: myLayers,
-  target: 'map',
-  view: new View({{"{"}}
-    projection: 'EPSG:3857',
-    center: this.utilsService.getCentre('EPSG:25831'),
-    zoom: this.utilsService.getDefaultZoom()
-  })
-});
+this.map = this.utilsService.getMap();
       </pre>
     </div>
     <div class="col-sm-6">
