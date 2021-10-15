@@ -29,31 +29,11 @@
     <div class="col-sm-6">
       <b>CODI FITXER TYPESCRIPT</b>
       <pre class="codi">
-const varPanTask = 1; // Valor que ve de l'API
-const dragPan = new DragPan();
-const keyboardPan = <span class="imp">new KeyboardPan();</span>
+this.map = this.utilsService.getMap();
 
-this.map = new Map({{"{"}}
-  controls: [],
-  interactions: defaultInteractions({{"{"}}
-    dragAndDrop: false,
-    dragPan: false,
-    keyboardPan: false
-  }),
-  layers: myLayers,
-  target: 'map',
-  view: new View({{"{"}}
-    projection: myProjection,
-    extent: myExtent,
-    center: [this.centreX, this.centreY],
-    zoom: 10
-  {{"}"}})
-{{"}"}});
-
-// Condicionals amb els controls que afegeixen
-if (varPanTask) {{"{"}}
-  this.map.addInteraction(dragPan);
-  this.map.addInteraction(keyboardPan);
+if (this.utilsService.hasPanTask()) {{"{"}}
+  this.map.addInteraction(new DragPan());
+  this.map.addInteraction(new KeyboardPan());
 }
       </pre>
     </div>

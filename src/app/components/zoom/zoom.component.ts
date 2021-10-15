@@ -38,10 +38,10 @@ export class ZoomComponent implements OnInit {
       this.map.addControl(new ZoomSlider());
       this.map.addControl(new Zoom());
       this.map.addInteraction(new DoubleClickZoom());
+      this.map.addControl(new FullScreen());
       this.map.addControl(new ZoomToExtent({
         extent: transformExtent(this.utilsService.getExtent(), 'EPSG:25831', 'EPSG:3857')
       }));
-      this.map.addControl(new FullScreen());
     }
   }
 
