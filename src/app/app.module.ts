@@ -18,6 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { SelectorComponent } from './components/selector/selector.component';
 import { ZoomComponent } from './components/zoom/zoom.component';
 import { PanComponent } from './components/pan/pan.component';
+import { MapBackComponent } from './components/map-back/map-back.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PanComponent } from './components/pan/pan.component';
     MapTwoComponent,
     SelectorComponent,
     ZoomComponent,
-    PanComponent
+    PanComponent,
+    MapBackComponent
   ],
   imports: [
     BrowserModule,

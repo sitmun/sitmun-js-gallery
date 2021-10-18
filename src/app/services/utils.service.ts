@@ -7,6 +7,7 @@ import Projection from 'ol/proj/Projection';
 import {Image as ImageLayer, Tile as TileLayer} from 'ol/layer';
 import {transform} from 'ol/proj';
 import { defaults as defaultInteractions } from 'ol/interaction';
+import BaseLayer from 'ol/layer/Base';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,7 @@ export class UtilsService {
       maxX: 4597923,
       maxY: 4605240
     },
-    zoom: 13,
+    zoom: 14,
     epsg: 'EPSG:25831',
     roles: [
       {
@@ -50,13 +51,19 @@ export class UtilsService {
       new ImageLayer({
         source: new ImageWMS({
           url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
-          crossOrigin: 'anonymous',
-          serverType: 'mapserver',
           projection: this.getProjection(),
           params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'},
         }),
       })
     ];
+  }
+
+  getMyView(): any {
+    return new View({
+      projection: 'EPSG:3857',
+      center: this.getCentre('EPSG:25831'),
+      zoom: this.getDefaultZoom()
+    });
   }
 
   getMap(): any {
@@ -70,11 +77,7 @@ export class UtilsService {
       }),
       layers: this.getMyLayers(),
       target: 'map',
-      view: new View({
-        projection: 'EPSG:3857',
-        center: this.getCentre('EPSG:25831'),
-        zoom: this.getDefaultZoom()
-      })
+      view: this.getMyView()
     });
   }
 
@@ -104,6 +107,53 @@ export class UtilsService {
 
   hasPanTask(): boolean {
     return true;
+  }
+
+  // PER FER LA GESTIÓ DE FONS
+
+  getMyLayers2(): any {
+    return [
+      new TileLayer({
+        source: new OSM(),
+        opacity: 0.75
+      }),
+      new ImageLayer({
+        source: new ImageWMS({
+          url: 'https://sitmun.diba.cat/wms/servlet/BUE1M',
+          projection: this.getProjection(),
+          params: {'LAYERS': 'BUE1M_412A_Z,BUE1M_221A,BUE1M_211A,BUE1M_211L,BUE1M_211P,BUE1M_111L,BUE1M_111P,BUE1M_111T,BUE1M_311T'}
+        })
+      }),
+      new ImageLayer({
+        source: new ImageWMS({
+          url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
+          projection: this.getProjection(),
+          params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
+        })
+      })
+    ];
+  }
+
+  getMap2(): any {
+    return new Map({
+      controls: [],
+      interactions: defaultInteractions({
+        doubleClickZoom: true,
+        keyboardZoom: false,
+        mouseWheelZoom: true,
+        dragPan: true
+      }),
+      layers: this.getMyLayers2(),
+      target: 'map',
+      view: this.getMyView()
+    });
+  }
+
+  returnOSM(): any {
+    return new TileLayer({
+      source: new OSM(),
+      opacity: 0.75
+    });
   }
 
 }

@@ -3,9 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { GridComponent } from './components/grid/grid.component';
 import { MapOneComponent } from './components/map-one/map-one.component';
 import { MapTwoComponent } from './components/map-two/map-two.component';
-import {SelectorComponent} from './components/selector/selector.component';
-import {ZoomComponent} from './components/zoom/zoom.component';
-import {PanComponent} from './components/pan/pan.component';
+import { SelectorComponent } from './components/selector/selector.component';
+import { ZoomComponent } from './components/zoom/zoom.component';
+import { PanComponent } from './components/pan/pan.component';
+import { MapBackComponent } from './components/map-back/map-back.component';
 
 const routes: Routes = [
   { path: '', component: GridComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: '2', component: MapTwoComponent },
   { path: 'select', component: SelectorComponent},
   { path: 'zoom', component: ZoomComponent },
-  { path: 'pan', component: PanComponent }
+  { path: 'pan', component: PanComponent },
+  { path: 'background', component: MapBackComponent }
 ];
 
 @NgModule({
