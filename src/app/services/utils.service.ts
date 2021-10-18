@@ -7,14 +7,13 @@ import Projection from 'ol/proj/Projection';
 import {Image as ImageLayer, Tile as TileLayer} from 'ol/layer';
 import {transform} from 'ol/proj';
 import { defaults as defaultInteractions } from 'ol/interaction';
-import BaseLayer from 'ol/layer/Base';
+import {transformExtent} from 'ol/proj';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilsService {
   constructor() { }
-  myCenter: any;
   workspaceApp = {
     id: 41,
     center: {
@@ -91,7 +90,9 @@ export class UtilsService {
   }
 
   getExtent(): number[]{
-    return [this.workspaceApp.extent.minX, this.workspaceApp.extent.minY, this.workspaceApp.extent.maxX, this.workspaceApp.extent.maxY];
+    // tslint:disable-next-line:max-line-length
+    const myExtent = [this.workspaceApp.extent.minX, this.workspaceApp.extent.minY, this.workspaceApp.extent.maxX, this.workspaceApp.extent.maxY];
+    return transformExtent(myExtent, 'EPSG:25831', 'EPSG:3857');
   }
 
   getProjection(): any {
@@ -152,7 +153,27 @@ export class UtilsService {
   returnOSM(): any {
     return new TileLayer({
       source: new OSM(),
-      opacity: 0.75
+      opacity: 1
+    });
+  }
+
+  returnBUE(): any {
+    return new ImageLayer({
+      source: new ImageWMS({
+        url: 'https://sitmun.diba.cat/wms/servlet/BUE1M',
+        projection: this.getProjection(),
+        params: {'LAYERS': 'BUE1M_412A_Z,BUE1M_221A,BUE1M_211A,BUE1M_211L,BUE1M_211P,BUE1M_111L,BUE1M_111P,BUE1M_111T,BUE1M_311T'}
+      })
+    });
+  }
+
+  returnCAE(): any {
+    return new ImageLayer({
+      source: new ImageWMS({
+        url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
+        projection: this.getProjection(),
+        params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
+      })
     });
   }
 

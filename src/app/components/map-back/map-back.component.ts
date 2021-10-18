@@ -20,8 +20,9 @@ export class MapBackComponent implements OnInit {
 
   map: Map;
   mapes: Mapa[] = [
-    { valor: 1, nom: 'CAE' },
-    { valor: 2, nom: 'BUE' }
+    { valor: 1, nom: 'OSM' },
+    { valor: 2, nom: 'CAE' },
+    { valor: 3, nom: 'BUE'}
   ];
   mapaFons: any = 1;
 
@@ -47,9 +48,12 @@ export class MapBackComponent implements OnInit {
       this.map.addLayer(this.utilsService.returnOSM());
     }
     else if (this.mapaFons === 2){
-      // Esborra tots els layers
       this.map.setLayerGroup(new LayerGroup());
-      this.map.addLayer(this.utilsService.returnOSM());
+      this.map.addLayer(this.utilsService.returnCAE());
+    }
+    else if (this.mapaFons === 3){
+      this.map.setLayerGroup(new LayerGroup());
+      this.map.addLayer(this.utilsService.returnBUE());
     }
   }
 }

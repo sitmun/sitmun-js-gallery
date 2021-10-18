@@ -40,7 +40,7 @@ export class ZoomComponent implements OnInit {
       this.map.addInteraction(new DoubleClickZoom());
       this.map.addControl(new FullScreen());
       this.map.addControl(new ZoomToExtent({
-        extent: transformExtent(this.utilsService.getExtent(), 'EPSG:25831', 'EPSG:3857')
+        extent: this.utilsService.getExtent()
       }));
     }
   }
