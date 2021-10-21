@@ -9,6 +9,11 @@ import {transform} from 'ol/proj';
 import { defaults as defaultInteractions } from 'ol/interaction';
 import {transformExtent} from 'ol/proj';
 
+interface Mapa {
+  id: number;
+  nom: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,15 +21,16 @@ export class UtilsService {
   constructor() { }
   workspaceApp = {
     id: 41,
-    center: {
-      x: 449372,
-      y: 4601581.5
-    },
+    name: 'Argentona',
     extent: {
       minX: 446439,
       minY: 452305,
       maxX: 4597923,
       maxY: 4605240
+    },
+    center: {
+      x: 449372,
+      y: 4601581.5
     },
     zoom: 14,
     epsg: 'EPSG:25831',
@@ -39,7 +45,24 @@ export class UtilsService {
           }
         ]
       }
-    ]
+    ],
+    application: {
+      id: 1,
+      backgrounds: [
+        {
+          id: 0,
+          name: 'OSM'
+        },
+        {
+          id: 1,
+          name: 'CAE'
+        },
+        {
+          id: 2,
+          name: 'BUE'
+        }
+      ]
+    }
   };
 
   getMyLayers(): any {
@@ -111,6 +134,16 @@ export class UtilsService {
   }
 
   // PER FER LA GESTIÓ DE FONS
+
+  readBackgroundMaps(): Mapa[]{
+    const mapes: Mapa[] = [];
+    for (const i of this.workspaceApp.application.backgrounds){
+      const m: Mapa = {id: i.id, nom: i.name};
+      mapes.push(m);
+    }
+    console.log(mapes);
+    return mapes;
+  }
 
   getMyLayers2(): any {
     return [

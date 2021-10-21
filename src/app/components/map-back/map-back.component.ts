@@ -7,7 +7,7 @@ import { UtilsService } from '../../services/utils.service';
 import LayerGroup from 'ol/layer/Group';
 
 interface Mapa {
-  valor: number;
+  id: number;
   nom: string;
 }
 
@@ -19,12 +19,8 @@ interface Mapa {
 export class MapBackComponent implements OnInit {
 
   map: Map;
-  mapes: Mapa[] = [
-    { valor: 1, nom: 'OSM' },
-    { valor: 2, nom: 'CAE' },
-    { valor: 3, nom: 'BUE'}
-  ];
-  mapaFons: any = 1;
+  mapaFons: any = 0;
+  mapes: Mapa[] = this.utilsService.readBackgroundMaps();
 
   constructor( private utilsService: UtilsService ){}
 
@@ -43,15 +39,15 @@ export class MapBackComponent implements OnInit {
   }
 
   changeBackgroundMap(): any {
-    if (this.mapaFons === 1){
+    if (this.mapaFons === 0){
       this.map.setLayerGroup(new LayerGroup());
       this.map.addLayer(this.utilsService.returnOSM());
     }
-    else if (this.mapaFons === 2){
+    else if (this.mapaFons === 1){
       this.map.setLayerGroup(new LayerGroup());
       this.map.addLayer(this.utilsService.returnCAE());
     }
-    else if (this.mapaFons === 3){
+    else if (this.mapaFons === 2){
       this.map.setLayerGroup(new LayerGroup());
       this.map.addLayer(this.utilsService.returnBUE());
     }

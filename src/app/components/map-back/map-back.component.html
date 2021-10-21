@@ -15,7 +15,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Mapa de fons:</mat-label>
         <mat-select [(value)]="this.mapaFons" (selectionChange)="this.changeBackgroundMap()">
-          <mat-option *ngFor="let mapa of this.mapes" [value]="mapa.valor">
+          <mat-option *ngFor="let mapa of this.mapes" [value]="mapa.id">
             {{ mapa.nom }}
           </mat-option>
         </mat-select>
