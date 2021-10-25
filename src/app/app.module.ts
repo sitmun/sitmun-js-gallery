@@ -19,6 +19,7 @@ import { SelectorComponent } from './components/selector/selector.component';
 import { ZoomComponent } from './components/zoom/zoom.component';
 import { PanComponent } from './components/pan/pan.component';
 import { MapBackComponent } from './components/map-back/map-back.component';
+import { MapCapesComponent } from './components/map-capes/map-capes.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MapBackComponent } from './components/map-back/map-back.component';
     SelectorComponent,
     ZoomComponent,
     PanComponent,
-    MapBackComponent
+    MapBackComponent,
+    MapCapesComponent
   ],
   imports: [
     BrowserModule,

@@ -210,4 +210,6 @@ export class UtilsService {
     });
   }
 
+  // PER FER LA GESTIÓ DE CAPESA
+
 }
