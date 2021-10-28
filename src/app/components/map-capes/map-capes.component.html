@@ -2,8 +2,8 @@
 
   <div class="row">
     <div class="col-sm-11">
-      <h1>Mapes de Fons - Selecció i Gestió</h1>
-      <p>Tenir un mapa de fons i poder escollir entre varis.</p>
+      <h1>Capes - Selecció i gestió</h1>
+      <p>Gestió de les diverses capes que tenim a un mapa i les seves opacitats.</p>
     </div>
     <div class="col-sm-1">
       <a routerLink="/" class="cool-link">BACK</a>
@@ -13,10 +13,10 @@
   <div class="row">
     <div class="col-sm-6">
       <mat-form-field appearance="fill">
-        <mat-label>Mapa de fons:</mat-label>
-        <mat-select [(value)]="this.mapaFons" (selectionChange)="this.changeBackgroundMap()">
-          <mat-option *ngFor="let mapa of this.mapes" [value]="mapa.id">
-            {{ mapa.nom }}
+        <mat-label>Capes:</mat-label>
+        <mat-select [formControl]="this.capes" (selectionChange)="this.changeLayers()" multiple>
+          <mat-option *ngFor="let capa of this.capesWMS" [value]="capa.id">
+            {{ capa.nom }}
           </mat-option>
         </mat-select>
       </mat-form-field>

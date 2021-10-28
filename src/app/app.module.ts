@@ -20,6 +20,7 @@ import { ZoomComponent } from './components/zoom/zoom.component';
 import { PanComponent } from './components/pan/pan.component';
 import { MapBackComponent } from './components/map-back/map-back.component';
 import { MapCapesComponent } from './components/map-capes/map-capes.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,13 +39,14 @@ import { MapCapesComponent } from './components/map-capes/map-capes.component';
     MapBackComponent,
     MapCapesComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatSelectModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatSelectModule,
+        ReactiveFormsModule
+    ],
   providers: [DecimalPipe],
   bootstrap: [AppComponent]
 })

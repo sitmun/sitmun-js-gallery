@@ -9,7 +9,12 @@ import {transform} from 'ol/proj';
 import { defaults as defaultInteractions } from 'ol/interaction';
 import {transformExtent} from 'ol/proj';
 
-interface Mapa {
+interface MapaFons {
+  id: number;
+  nom: string;
+}
+
+interface Capa {
   id: number;
   nom: string;
 }
@@ -135,13 +140,12 @@ export class UtilsService {
 
   // PER FER LA GESTIÓ DE FONS
 
-  readBackgroundMaps(): Mapa[]{
-    const mapes: Mapa[] = [];
+  readBackgroundMaps(): MapaFons[]{
+    const mapes: MapaFons[] = [];
     for (const i of this.workspaceApp.application.backgrounds){
-      const m: Mapa = {id: i.id, nom: i.name};
+      const m: MapaFons = {id: i.id, nom: i.name};
       mapes.push(m);
     }
-    console.log(mapes);
     return mapes;
   }
 
@@ -211,5 +215,14 @@ export class UtilsService {
   }
 
   // PER FER LA GESTIÓ DE CAPESA
+
+  readLayers(): Capa[]{
+    const capes: Capa[] = [];
+    for (const i of this.workspaceApp.application.backgrounds){
+      const m: Capa = {id: i.id, nom: i.name};
+      capes.push(m);
+    }
+    return capes;
+  }
 
 }
