@@ -5,7 +5,7 @@ import proj4 from 'proj4';
 import { register } from 'ol/proj/proj4';
 import { UtilsService } from '../../services/utils.service';
 import LayerGroup from 'ol/layer/Group';
-import {FormControl} from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 interface MapaFons {
   id: number;
@@ -28,6 +28,8 @@ export class MapCapesComponent implements OnInit {
   mapes: MapaFons[] = this.utilsService.readBackgroundMaps();
   capesWMS: Capa[] = this.utilsService.readLayers();
   capes = new FormControl();
+  capaSeleccionada = new FormControl();
+  opacitatCapaSeleccionada = new FormControl();
 
   constructor( private utilsService: UtilsService ){}
 
@@ -60,6 +62,33 @@ export class MapCapesComponent implements OnInit {
         this.map.addLayer(this.utilsService.returnBUE());
       }
     }
+  }
+
+  opacityFunction(): any {
+    const numCapaSelec = this.capaSeleccionada.value;
+    const capesMapa = this.map.getLayerGroup();
+    let opActual;
+
+    // tslint:disable-next-line:only-arrow-functions
+    capesMapa.getLayers().forEach( function(layer, i): any{
+      if ( i === numCapaSelec ){
+        opActual = layer.getOpacity();
+      }
+    });
+    (document.getElementById('opSlider2') as HTMLInputElement).value = opActual;
+  }
+
+  canviOpacitat(): any {
+    const numCapaSelec = this.capaSeleccionada.value;
+    const capesMapa = this.map.getLayerGroup();
+    const opActual = this.opacitatCapaSeleccionada.value;
+
+    // tslint:disable-next-line:only-arrow-functions
+    capesMapa.getLayers().forEach( function(layer, i): any{
+      if ( i === numCapaSelec ){
+        layer.setOpacity(parseFloat(opActual));
+      }
+    });
   }
 
 }

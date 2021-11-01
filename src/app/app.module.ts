@@ -21,6 +21,7 @@ import { PanComponent } from './components/pan/pan.component';
 import { MapBackComponent } from './components/map-back/map-back.component';
 import { MapCapesComponent } from './components/map-capes/map-capes.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -39,14 +40,15 @@ import {ReactiveFormsModule} from '@angular/forms';
     MapBackComponent,
     MapCapesComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatSelectModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatSliderModule
+  ],
   providers: [DecimalPipe],
   bootstrap: [AppComponent]
 })

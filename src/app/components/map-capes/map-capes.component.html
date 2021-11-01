@@ -11,15 +11,29 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-2">
       <mat-form-field appearance="fill">
-        <mat-label>Capes:</mat-label>
+        <mat-label>Capes Visibles:</mat-label>
         <mat-select [formControl]="this.capes" (selectionChange)="this.changeLayers()" multiple>
           <mat-option *ngFor="let capa of this.capesWMS" [value]="capa.id">
             {{ capa.nom }}
           </mat-option>
         </mat-select>
       </mat-form-field>
+    </div>
+    <div class="col-sm-2">
+      <mat-form-field appearance="fill">
+        <mat-label>Capa Seleccionada:</mat-label>
+        <mat-select [formControl]="this.capaSeleccionada" (selectionChange)="this.opacityFunction()">
+          <mat-option *ngFor="let capa of this.capesWMS" [value]="capa.id">
+            {{ capa.nom }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-2 my-auto">
+      <p class="mb-0">Opacitat:</p>
+      <input type="range" min="0" max="1" step="0.1" id="opSlider2" (change)="this.canviOpacitat()" [formControl]="this.opacitatCapaSeleccionada" >
     </div>
     <div class="col-sm-6">
     </div>
