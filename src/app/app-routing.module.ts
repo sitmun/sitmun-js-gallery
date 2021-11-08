@@ -8,6 +8,7 @@ import { ZoomComponent } from './components/zoom/zoom.component';
 import { PanComponent } from './components/pan/pan.component';
 import { MapBackComponent } from './components/map-back/map-back.component';
 import { MapCapesComponent } from './components/map-capes/map-capes.component';
+import {AltresFormatsComponent} from './components/altres-formats/altres-formats.component';
 
 const routes: Routes = [
   { path: '', component: GridComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'zoom', component: ZoomComponent },
   { path: 'pan', component: PanComponent },
   { path: 'background', component: MapBackComponent },
-  { path: 'capes', component: MapCapesComponent }
+  { path: 'capes', component: MapCapesComponent },
+  { path: 'altres', component: AltresFormatsComponent }
 ];
 
 @NgModule({

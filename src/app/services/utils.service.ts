@@ -23,7 +23,8 @@ interface Capa {
   providedIn: 'root'
 })
 export class UtilsService {
-  constructor() { }
+  constructor() {}
+
   workspaceApp = {
     id: 41,
     name: 'Argentona',
@@ -117,7 +118,7 @@ export class UtilsService {
     return transform(myCenter, epsgOrig, 'EPSG:3857');
   }
 
-  getExtent(): number[]{
+  getExtent(): number[] {
     // tslint:disable-next-line:max-line-length
     const myExtent = [this.workspaceApp.extent.minX, this.workspaceApp.extent.minY, this.workspaceApp.extent.maxX, this.workspaceApp.extent.maxY];
     return transformExtent(myExtent, 'EPSG:25831', 'EPSG:3857');
@@ -140,9 +141,9 @@ export class UtilsService {
 
   // PER FER LA GESTIÓ DE FONS
 
-  readBackgroundMaps(): MapaFons[]{
+  readBackgroundMaps(): MapaFons[] {
     const mapes: MapaFons[] = [];
-    for (const i of this.workspaceApp.application.backgrounds){
+    for (const i of this.workspaceApp.application.backgrounds) {
       const m: MapaFons = {id: i.id, nom: i.name};
       mapes.push(m);
     }
@@ -216,13 +217,78 @@ export class UtilsService {
 
   // PER FER LA GESTIÓ DE CAPESA
 
-  readLayers(): Capa[]{
+  readLayers(): Capa[] {
     const capes: Capa[] = [];
-    for (const i of this.workspaceApp.application.backgrounds){
+    for (const i of this.workspaceApp.application.backgrounds) {
       const m: Capa = {id: i.id, nom: i.name};
       capes.push(m);
     }
     return capes;
   }
 
+  // GESTIO DE CAPES COMPATIBLES
+
+  readLayerTypes(): MapaFons[] {
+    const mapes: MapaFons[] = [];
+    mapes.push({id: 0, nom: 'WMTS'});
+    mapes.push({id: 1, nom: 'WFS'});
+    mapes.push({id: 2, nom: 'GeoJSON'});
+    mapes.push({id: 3, nom: 'KML'});
+    mapes.push({id: 4, nom: 'GML'});
+    mapes.push({id: 5, nom: 'ShapeFile'});
+    return mapes;
+  }
+
+  returnLayer(type: number): any {
+    switch (type){
+      case 0:
+        return new ImageLayer({
+          source: new ImageWMS({
+            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
+            projection: this.getProjection(),
+            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
+          })
+        });
+      case 1:
+        return new ImageLayer({
+          source: new ImageWMS({
+            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
+            projection: this.getProjection(),
+            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
+          })
+        });
+      case 2:
+        return new ImageLayer({
+          source: new ImageWMS({
+            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
+            projection: this.getProjection(),
+            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
+          })
+        });
+      case 3:
+        return new ImageLayer({
+          source: new ImageWMS({
+            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
+            projection: this.getProjection(),
+            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
+          })
+        });
+      case 4:
+        return new ImageLayer({
+          source: new ImageWMS({
+            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
+            projection: this.getProjection(),
+            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
+          })
+        });
+      case 5:
+        return new ImageLayer({
+          source: new ImageWMS({
+            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
+            projection: this.getProjection(),
+            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
+          })
+        });
+    }
+  }
 }

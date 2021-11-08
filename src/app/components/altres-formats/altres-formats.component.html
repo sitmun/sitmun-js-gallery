@@ -1,0 +1,92 @@
+<div class="container-fluid main-container">
+
+  <div class="row">
+    <div class="col-sm-11">
+      <h1>Mapes de Fons - Selecció i Gestió</h1>
+      <p>Tenir un mapa de fons i poder escollir entre varis.</p>
+    </div>
+    <div class="col-sm-1">
+      <a routerLink="/" class="cool-link">BACK</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <mat-form-field appearance="fill">
+        <mat-label>Mapa de fons:</mat-label>
+        <mat-select [formControl]="this.capaSeleccionada" (selectionChange)="this.changeLayerType()">
+          <mat-option *ngFor="let mapa of this.mapes" [value]="mapa.id">
+            {{ mapa.nom }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-6">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 map-container">
+      <app-map [map]="map"></app-map>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-sm-6">
+      <app-scaleline [map]="map"></app-scaleline>
+    </div>
+    <div class="col-sm-6" align="right">
+      <app-mouse-position [map]="map" positionTemplate="{x}, {y} m"></app-mouse-position>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-sm-6">
+      <b>CODI FITXER TYPESCRIPT</b>
+      <pre class="codi">
+map: Map;
+mapaFons: any = 0;
+mapes: Mapa[] = this.utilsService.readBackgroundMaps();
+
+proj4.defs(
+  'EPSG:25831',
+  '+proj=utm +zone=31 +ellps=GRS80 +units=m +no_defs'
+);
+proj4.defs(
+  'EPSG:3857',
+  '+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0
+   +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs'
+);
+register(proj4);
+
+this.map = this.utilsService.getMap();
+
+changeBackgroundMap(): any {{'{'}}
+  if (this.mapaFons === 0){{'{'}}
+    this.map.setLayerGroup(new LayerGroup());
+    this.map.addLayer(this.utilsService.returnOSM());
+  }
+  else if (this.mapaFons === 1){{'{'}}
+    this.map.setLayerGroup(new LayerGroup());
+    this.map.addLayer(this.utilsService.returnCAE());
+  }
+  else if (this.mapaFons === 2){{'{'}}
+    this.map.setLayerGroup(new LayerGroup());
+    this.map.addLayer(this.utilsService.returnBUE());
+  }
+}
+      </pre>
+    </div>
+    <div class="col-sm-6">
+      <b>CODI FITXER HTML</b>
+      <pre class="codi">
+<&zwj;div class="row">
+  <&zwj;div class="col-sm-12 map-container">
+    <&zwj;app-map [map]="map"><&zwj;/app-map>
+  <&zwj;/div>
+<&zwj;/div>
+      </pre>
+    </div>
+  </div>
+
+</div>

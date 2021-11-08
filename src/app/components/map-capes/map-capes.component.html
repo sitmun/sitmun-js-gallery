@@ -70,6 +70,35 @@ proj4.defs(
 register(proj4);
 
 this.map = this.utilsService.getMap();
+// @ts-ignore
+this.capes.value = [0, 1, 2];
+
+opacityFunction(): any {{'{'}}
+  const numCapaSelec = this.capaSeleccionada.value;
+  const capesMapa = this.map.getLayerGroup();
+  let opActual;
+
+  // tslint:disable-next-line:only-arrow-functions
+  capesMapa.getLayers().forEach( function(layer, i): any{{'{'}}
+    if ( i === numCapaSelec ){{'{'}}
+      opActual = layer.getOpacity();
+    }
+  });
+  (document.getElementById('opSlider2') as HTMLInputElement).value = opActual;
+}
+
+canviOpacitat(): any {{'{'}}
+  const numCapaSelec = this.capaSeleccionada.value;
+  const capesMapa = this.map.getLayerGroup();
+  const opActual = this.opacitatCapaSeleccionada.value;
+
+  // tslint:disable-next-line:only-arrow-functions
+  capesMapa.getLayers().forEach( function(layer, i): any{{'{'}}
+    if ( i === numCapaSelec ){{'{'}}
+      layer.setOpacity(parseFloat(opActual));
+    }
+  });
+}
       </pre>
     </div>
     <div class="col-sm-6">

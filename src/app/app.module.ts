@@ -22,6 +22,7 @@ import { MapBackComponent } from './components/map-back/map-back.component';
 import { MapCapesComponent } from './components/map-capes/map-capes.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatSliderModule} from '@angular/material/slider';
+import { AltresFormatsComponent } from './components/altres-formats/altres-formats.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatSliderModule} from '@angular/material/slider';
     ZoomComponent,
     PanComponent,
     MapBackComponent,
-    MapCapesComponent
+    MapCapesComponent,
+    AltresFormatsComponent
   ],
   imports: [
     BrowserModule,
