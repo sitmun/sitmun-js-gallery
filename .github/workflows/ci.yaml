@@ -27,4 +27,12 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Build for deployment
+        run: npm run build -- --configuration=testdeployment --baseHref="https://sitmun.github.io/sitmun-js-gallery/"
+      - name: Deploy to GitHub pages
+        env:
+          USERNAME: ${{secrets.USERNAME_FOR_WORKFLOWS}}
+          GITHUB_API_KEY: ${{secrets.TOKEN_FOR_WORKFLOWS}}
+        run: ./build-scripts/deploy.sh
+        shell: bash
 
