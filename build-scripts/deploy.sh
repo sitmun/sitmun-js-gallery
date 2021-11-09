@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 echo "Deploying to testdeployment configuration ..."
 echo
