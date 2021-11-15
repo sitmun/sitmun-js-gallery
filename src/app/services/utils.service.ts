@@ -3,11 +3,24 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import ImageWMS from 'ol/source/ImageWMS';
 import OSM from 'ol/source/OSM';
+import KML from 'ol/format/KML';
+import GeoJSON from 'ol/format/GeoJSON';
+import WFS from 'ol/format/WFS';
+import WMTS from 'ol/source/WMTS';
 import Projection from 'ol/proj/Projection';
-import {Image as ImageLayer, Tile as TileLayer} from 'ol/layer';
-import {transform} from 'ol/proj';
+import { Image as ImageLayer, Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
+import { transform } from 'ol/proj';
 import { defaults as defaultInteractions } from 'ol/interaction';
-import {transformExtent} from 'ol/proj';
+import { transformExtent } from 'ol/proj';
+import WMTSTileGrid from 'ol/tilegrid/WMTS';
+import {get as getProjection} from 'ol/proj';
+import {getTopLeft, getWidth} from 'ol/extent';
+import XYZ from 'ol/source/XYZ';
+import {bbox as bboxStrategy} from 'ol/loadingstrategy';
+import Circle from 'ol/geom/Circle';
+import Feature from 'ol/Feature';
+import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
+import {Vector as VectorSource} from 'ol/source';
 
 interface MapaFons {
   id: number;
@@ -239,56 +252,373 @@ export class UtilsService {
     return mapes;
   }
 
-  returnLayer(type: number): any {
-    switch (type){
-      case 0:
-        return new ImageLayer({
-          source: new ImageWMS({
-            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
-            projection: this.getProjection(),
-            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
-          })
-        });
-      case 1:
-        return new ImageLayer({
-          source: new ImageWMS({
-            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
-            projection: this.getProjection(),
-            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
-          })
-        });
-      case 2:
-        return new ImageLayer({
-          source: new ImageWMS({
-            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
-            projection: this.getProjection(),
-            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
-          })
-        });
-      case 3:
-        return new ImageLayer({
-          source: new ImageWMS({
-            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
-            projection: this.getProjection(),
-            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
-          })
-        });
-      case 4:
-        return new ImageLayer({
-          source: new ImageWMS({
-            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
-            projection: this.getProjection(),
-            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
-          })
-        });
-      case 5:
-        return new ImageLayer({
-          source: new ImageWMS({
-            url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
-            projection: this.getProjection(),
-            params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
-          })
-        });
+  getWMTS(): any{
+    const projection = getProjection('EPSG:3857');
+    const projectionExtent = projection.getExtent();
+    const size = getWidth(projectionExtent) / 256;
+    const resolutions = new Array(19);
+    const matrixIds = new Array(19);
+    for (let z = 0; z < 19; ++z) {
+      resolutions[z] = size / Math.pow(2, z);
+      matrixIds[z] = z;
     }
+    return new Map({
+      layers: [
+        new TileLayer({
+          source: new OSM(),
+        }),
+        new TileLayer({
+          opacity: 0.7,
+          source: new WMTS({
+            attributions:
+              'Tiles © <a href="https://mrdata.usgs.gov/geology/state/"' +
+              ' target="_blank">USGS</a>',
+            url: 'https://mrdata.usgs.gov/mapcache/wmts',
+            layer: 'sgmc2',
+            matrixSet: 'GoogleMapsCompatible',
+            format: 'image/png',
+            projection: projection,
+            tileGrid: new WMTSTileGrid({
+              origin: getTopLeft(projectionExtent),
+              resolutions: resolutions,
+              matrixIds: matrixIds,
+            }),
+            style: 'default',
+            wrapX: true,
+          }),
+        }),
+      ],
+      target: 'map',
+      view: new View({
+        center: [-11158582, 4813697],
+        zoom: 4,
+      }),
+    });
   }
+
+  getWFS(): any{
+    const vectorSource = new VectorSource({
+      format: new GeoJSON(),
+      url: function (extent) {
+        return (
+          'https://ahocevar.com/geoserver/wfs?service=WFS&' +
+          'version=1.1.0&request=GetFeature&typename=osm:water_areas&' +
+          'outputFormat=application/json&srsname=EPSG:3857&' +
+          'bbox=' +
+          extent.join(',') +
+          ',EPSG:3857'
+        );
+      },
+      strategy: bboxStrategy,
+    });
+    const vector = new VectorLayer({
+      source: vectorSource,
+      style: new Style({
+        stroke: new Stroke({
+          color: 'rgba(0, 0, 255, 1.0)',
+          width: 2,
+        }),
+      }),
+    });
+    const key = '28yG78XW8reuo3cAMW7j';
+    const attributions =
+      '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> ' +
+      '<a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>';
+
+    const raster = new TileLayer({
+      source: new XYZ({
+        attributions: attributions,
+        url: 'https://api.maptiler.com/tiles/satellite/{z}/{x}/{y}.jpg?key=' + key,
+        maxZoom: 20,
+      }),
+    });
+
+    return new Map({
+      layers: [raster, vector],
+      target: document.getElementById('map'),
+      view: new View({
+        center: [-8908887.277395891, 5381918.072437216],
+        maxZoom: 19,
+        zoom: 12,
+      }),
+    });
+  }
+
+  getGeoJSON(): any {
+    const image = new CircleStyle({
+      radius: 5,
+      fill: null,
+      stroke: new Stroke({color: 'red', width: 1}),
+    });
+
+    const styles = {
+      'Point': new Style({
+        image: image,
+      }),
+      'LineString': new Style({
+        stroke: new Stroke({
+          color: 'green',
+          width: 1,
+        }),
+      }),
+      'MultiLineString': new Style({
+        stroke: new Stroke({
+          color: 'green',
+          width: 1,
+        }),
+      }),
+      'MultiPoint': new Style({
+        image: image,
+      }),
+      'MultiPolygon': new Style({
+        stroke: new Stroke({
+          color: 'yellow',
+          width: 1,
+        }),
+        fill: new Fill({
+          color: 'rgba(255, 255, 0, 0.1)',
+        }),
+      }),
+      'Polygon': new Style({
+        stroke: new Stroke({
+          color: 'blue',
+          lineDash: [4],
+          width: 3,
+        }),
+        fill: new Fill({
+          color: 'rgba(0, 0, 255, 0.1)',
+        }),
+      }),
+      'GeometryCollection': new Style({
+        stroke: new Stroke({
+          color: 'magenta',
+          width: 2,
+        }),
+        fill: new Fill({
+          color: 'magenta',
+        }),
+        image: new CircleStyle({
+          radius: 10,
+          fill: null,
+          stroke: new Stroke({
+            color: 'magenta',
+          }),
+        }),
+      }),
+      'Circle': new Style({
+        stroke: new Stroke({
+          color: 'red',
+          width: 2,
+        }),
+        fill: new Fill({
+          color: 'rgba(255,0,0,0.2)',
+        }),
+      }),
+    };
+
+    const styleFunction = function (feature) {
+      return styles[feature.getGeometry().getType()];
+    };
+
+    const geojsonObject = {
+      'type': 'FeatureCollection',
+      'crs': {
+        'type': 'name',
+        'properties': {
+          'name': 'EPSG:3857',
+        },
+      },
+      'features': [
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [0, 0],
+          },
+        },
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'LineString',
+            'coordinates': [
+              [4e6, -2e6],
+              [8e6, 2e6],
+            ],
+          },
+        },
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'LineString',
+            'coordinates': [
+              [4e6, 2e6],
+              [8e6, -2e6],
+            ],
+          },
+        },
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'Polygon',
+            'coordinates': [
+              [
+                [-5e6, -1e6],
+                [-3e6, -1e6],
+                [-4e6, 1e6],
+                [-5e6, -1e6],
+              ],
+            ],
+          },
+        },
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'MultiLineString',
+            'coordinates': [
+              [
+                [-1e6, -7.5e5],
+                [-1e6, 7.5e5],
+              ],
+              [
+                [1e6, -7.5e5],
+                [1e6, 7.5e5],
+              ],
+              [
+                [-7.5e5, -1e6],
+                [7.5e5, -1e6],
+              ],
+              [
+                [-7.5e5, 1e6],
+                [7.5e5, 1e6],
+              ],
+            ],
+          },
+        },
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'MultiPolygon',
+            'coordinates': [
+              [
+                [
+                  [-5e6, 6e6],
+                  [-3e6, 6e6],
+                  [-3e6, 8e6],
+                  [-5e6, 8e6],
+                  [-5e6, 6e6],
+                ],
+              ],
+              [
+                [
+                  [-2e6, 6e6],
+                  [0, 6e6],
+                  [0, 8e6],
+                  [-2e6, 8e6],
+                  [-2e6, 6e6],
+                ],
+              ],
+              [
+                [
+                  [1e6, 6e6],
+                  [3e6, 6e6],
+                  [3e6, 8e6],
+                  [1e6, 8e6],
+                  [1e6, 6e6],
+                ],
+              ],
+            ],
+          },
+        },
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'GeometryCollection',
+            'geometries': [
+              {
+                'type': 'LineString',
+                'coordinates': [
+                  [-5e6, -5e6],
+                  [0, -5e6],
+                ],
+              },
+              {
+                'type': 'Point',
+                'coordinates': [4e6, -5e6],
+              },
+              {
+                'type': 'Polygon',
+                'coordinates': [
+                  [
+                    [1e6, -6e6],
+                    [3e6, -6e6],
+                    [2e6, -4e6],
+                    [1e6, -6e6],
+                  ],
+                ],
+              },
+            ],
+          },
+        },
+      ],
+    };
+
+    const vectorSource = new VectorSource({
+      features: new GeoJSON().readFeatures(geojsonObject),
+    });
+
+    vectorSource.addFeature(new Feature(new Circle([5e6, 7e6], 1e6)));
+
+    const vectorLayer = new VectorLayer({
+      source: vectorSource,
+      style: styleFunction,
+    });
+
+    return new Map({
+      layers: [
+        new TileLayer({
+          source: new OSM(),
+        }),
+        vectorLayer,
+      ],
+      target: 'map',
+      view: new View({
+        center: [0, 0],
+        zoom: 2,
+      }),
+    });
+  }
+
+  getKML(): any {
+    const key = '28yG78XW8reuo3cAMW7j';
+    const attributions =
+      '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> ' +
+      '<a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>';
+
+    const raster = new TileLayer({
+      source: new XYZ({
+        attributions: attributions,
+        url: 'https://api.maptiler.com/tiles/satellite/{z}/{x}/{y}.jpg?key=' + key,
+        maxZoom: 20,
+      }),
+    });
+
+    const vector = new VectorLayer({
+      source: new VectorSource({
+        url: 'data/kml/2012-02-10.kml',
+        format: new KML(),
+      }),
+    });
+
+    return new Map({
+      layers: [raster, vector],
+      target: document.getElementById('map'),
+      view: new View({
+        center: [876970.8463461736, 5859807.853963373],
+        projection: 'EPSG:3857',
+        zoom: 10,
+      }),
+    });
+  }
+
+  getGML(): any {}
 }

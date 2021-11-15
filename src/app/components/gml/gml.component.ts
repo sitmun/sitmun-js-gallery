@@ -6,11 +6,11 @@ import { register } from 'ol/proj/proj4';
 import { UtilsService } from '../../services/utils.service';
 
 @Component({
-  selector: 'app-altres-formats',
-  templateUrl: './altres-formats.component.html',
-  styleUrls: ['./altres-formats.component.css']
+  selector: 'app-gml',
+  templateUrl: './gml.component.html',
+  styleUrls: ['./gml.component.css']
 })
-export class AltresFormatsComponent implements OnInit {
+export class GmlComponent implements OnInit {
 
   map: Map;
 
@@ -27,7 +27,7 @@ export class AltresFormatsComponent implements OnInit {
     );
     register(proj4);
 
-    this.map = this.utilsService.getWMTS();
+    // this.map = this.utilsService.getGML();
   }
 
 }

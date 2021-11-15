@@ -23,6 +23,11 @@ import { MapCapesComponent } from './components/map-capes/map-capes.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatSliderModule} from '@angular/material/slider';
 import { AltresFormatsComponent } from './components/altres-formats/altres-formats.component';
+import { WfsComponent } from './components/wfs/wfs.component';
+import { GeojsonComponent } from './components/geojson/geojson.component';
+import { KmlComponent } from './components/kml/kml.component';
+import { GmlComponent } from './components/gml/gml.component';
+import { ShapeFileComponent } from './components/shape-file/shape-file.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,12 @@ import { AltresFormatsComponent } from './components/altres-formats/altres-forma
     PanComponent,
     MapBackComponent,
     MapCapesComponent,
-    AltresFormatsComponent
+    AltresFormatsComponent,
+    WfsComponent,
+    GeojsonComponent,
+    KmlComponent,
+    GmlComponent,
+    ShapeFileComponent
   ],
   imports: [
     BrowserModule,

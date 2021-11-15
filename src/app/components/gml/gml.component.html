@@ -1,0 +1,39 @@
+<div class="container-fluid main-container">
+
+  <div class="row">
+    <div class="col-sm-11">
+      <h1>GML - Compatibilitat</h1>
+    </div>
+    <div class="col-sm-1">
+      <a routerLink="/" class="cool-link">BACK</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 map-container">
+      <app-map [map]="map"></app-map>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+
+    <div class="col-sm-12">
+      <pre class="codi">
+Documentació OpenLayers sobre GML
+
+Nom	        |  Descripció
+featureNS       |  Feature namespace. If not defined will be derived from GML. If multiple feature types have been configured which come from different feature namespaces, this will be an object with the keys being the prefixes used in the entries of featureType array. The values of the object will be the feature namespaces themselves. So for instance there might be a featureType item topp:states in the featureType array and then there will be a key topp in the featureNS object with value http://www.openplans.org/topp.
+featureType     |  Feature type(s) to parse. If multiple feature types need to be configured which come from different feature namespaces, featureNS will be an object with the keys being the prefixes used in the entries of featureType array. The values of the object will be the feature namespaces themselves. So for instance there might be a featureType item topp:states and then there will be a key named topp in the featureNS object with value http://www.openplans.org/topp.
+srsName         |  srsName to use when writing geometries.
+surface         |  Write gml:Surface instead of gml:Polygon elements. This also affects the elements in multi-part geometries.
+curve           |  Write gml:Curve instead of gml:LineString elements. This also affects the elements in multi-part geometries.
+multiCurve      |  Write gml:MultiCurve instead of gml:MultiLineString. Since the latter is deprecated in GML 3.
+multiSurface    |  Write gml:multiSurface instead of gml:MultiPolygon. Since the latter is deprecated in GML 3.
+schemaLocation  |  Optional schemaLocation to use when writing out the GML, this will override the default provided.
+hasZ            |  If coordinates have a Z value.
+      </pre>
+    </div>
+
+  </div>
+
+</div>

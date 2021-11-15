@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-sm-11">
-      <h1>WMTS - Compatibilitat</h1>
+      <h1>KML - Compatibilitat</h1>
     </div>
     <div class="col-sm-1">
       <a routerLink="/" class="cool-link">BACK</a>
@@ -35,16 +35,16 @@ register(proj4);
 this.map = this.utilsService.getMap();
 
 changeBackgroundMap(): any {{'{'}}
-  if (this.mapaFons === 0){{'{'}}
-    this.map.setLayerGroup(new LayerGroup());
+        if (this.mapaFons === 0){{'{'}}
+        this.map.setLayerGroup(new LayerGroup());
     this.map.addLayer(this.utilsService.returnOSM());
   }
   else if (this.mapaFons === 1){{'{'}}
-    this.map.setLayerGroup(new LayerGroup());
+        this.map.setLayerGroup(new LayerGroup());
     this.map.addLayer(this.utilsService.returnCAE());
   }
   else if (this.mapaFons === 2){{'{'}}
-    this.map.setLayerGroup(new LayerGroup());
+        this.map.setLayerGroup(new LayerGroup());
     this.map.addLayer(this.utilsService.returnBUE());
   }
 }

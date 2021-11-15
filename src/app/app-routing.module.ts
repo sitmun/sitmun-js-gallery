@@ -9,6 +9,11 @@ import { PanComponent } from './components/pan/pan.component';
 import { MapBackComponent } from './components/map-back/map-back.component';
 import { MapCapesComponent } from './components/map-capes/map-capes.component';
 import {AltresFormatsComponent} from './components/altres-formats/altres-formats.component';
+import {WfsComponent} from './components/wfs/wfs.component';
+import {GeojsonComponent} from './components/geojson/geojson.component';
+import {KmlComponent} from './components/kml/kml.component';
+import {GmlComponent} from './components/gml/gml.component';
+import {ShapeFileComponent} from './components/shape-file/shape-file.component';
 
 const routes: Routes = [
   { path: '', component: GridComponent },
@@ -19,7 +24,12 @@ const routes: Routes = [
   { path: 'pan', component: PanComponent },
   { path: 'background', component: MapBackComponent },
   { path: 'capes', component: MapCapesComponent },
-  { path: 'altres', component: AltresFormatsComponent }
+  { path: 'altres', component: AltresFormatsComponent },
+  { path: 'wfs', component: WfsComponent },
+  { path: 'geojson', component: GeojsonComponent },
+  { path: 'kml', component: KmlComponent },
+  { path: 'gml', component: GmlComponent },
+  { path: 'shapefile', component: ShapeFileComponent }
 ];
 
 @NgModule({
