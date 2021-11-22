@@ -62,6 +62,15 @@ export class UtilsService {
             id: 1,
             nom: 'zoom'
           }
+        ],
+        permissions: [
+          {
+            members: [
+              {
+                id: 1,
+              }
+            ]
+          }
         ]
       }
     ],
@@ -93,7 +102,7 @@ export class UtilsService {
         source: new ImageWMS({
           url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
           projection: this.getProjection(),
-          params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'},
+          params: {LAYERS: 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'},
         }),
       })
     ];
@@ -173,14 +182,14 @@ export class UtilsService {
         source: new ImageWMS({
           url: 'https://sitmun.diba.cat/wms/servlet/BUE1M',
           projection: this.getProjection(),
-          params: {'LAYERS': 'BUE1M_412A_Z,BUE1M_221A,BUE1M_211A,BUE1M_211L,BUE1M_211P,BUE1M_111L,BUE1M_111P,BUE1M_111T,BUE1M_311T'}
+          params: {LAYERS: 'BUE1M_412A_Z,BUE1M_221A,BUE1M_211A,BUE1M_211L,BUE1M_211P,BUE1M_111L,BUE1M_111P,BUE1M_111T,BUE1M_311T'}
         })
       }),
       new ImageLayer({
         source: new ImageWMS({
           url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
           projection: this.getProjection(),
-          params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
+          params: {LAYERS: 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
         })
       })
     ];
@@ -213,7 +222,7 @@ export class UtilsService {
       source: new ImageWMS({
         url: 'https://sitmun.diba.cat/wms/servlet/BUE1M',
         projection: this.getProjection(),
-        params: {'LAYERS': 'BUE1M_412A_Z,BUE1M_221A,BUE1M_211A,BUE1M_211L,BUE1M_211P,BUE1M_111L,BUE1M_111P,BUE1M_111T,BUE1M_311T'}
+        params: {LAYERS: 'BUE1M_412A_Z,BUE1M_221A,BUE1M_211A,BUE1M_211L,BUE1M_211P,BUE1M_111L,BUE1M_111P,BUE1M_111T,BUE1M_311T'}
       })
     });
   }
@@ -223,7 +232,7 @@ export class UtilsService {
       source: new ImageWMS({
         url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
         projection: this.getProjection(),
-        params: {'LAYERS': 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
+        params: {LAYERS: 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
       })
     });
   }
@@ -240,17 +249,6 @@ export class UtilsService {
   }
 
   // GESTIO DE CAPES COMPATIBLES
-
-  readLayerTypes(): MapaFons[] {
-    const mapes: MapaFons[] = [];
-    mapes.push({id: 0, nom: 'WMTS'});
-    mapes.push({id: 1, nom: 'WFS'});
-    mapes.push({id: 2, nom: 'GeoJSON'});
-    mapes.push({id: 3, nom: 'KML'});
-    mapes.push({id: 4, nom: 'GML'});
-    mapes.push({id: 5, nom: 'ShapeFile'});
-    return mapes;
-  }
 
   getWMTS(): any{
     const projection = getProjection('EPSG:3857');
@@ -270,28 +268,24 @@ export class UtilsService {
         new TileLayer({
           opacity: 0.7,
           source: new WMTS({
-            attributions:
-              'Tiles © <a href="https://mrdata.usgs.gov/geology/state/"' +
-              ' target="_blank">USGS</a>',
             url: 'https://mrdata.usgs.gov/mapcache/wmts',
             layer: 'sgmc2',
             matrixSet: 'GoogleMapsCompatible',
             format: 'image/png',
-            projection: projection,
+            projection: getProjection('EPSG:3857'),
             tileGrid: new WMTSTileGrid({
               origin: getTopLeft(projectionExtent),
-              resolutions: resolutions,
-              matrixIds: matrixIds,
+              resolutions,
+              matrixIds,
             }),
-            style: 'default',
             wrapX: true,
           }),
         }),
       ],
       target: 'map',
       view: new View({
-        center: [-11158582, 4813697],
-        zoom: 4,
+        center: this.getCentre('EPSG:25831'),
+        zoom: this.getDefaultZoom(),
       }),
     });
   }
@@ -299,7 +293,8 @@ export class UtilsService {
   getWFS(): any{
     const vectorSource = new VectorSource({
       format: new GeoJSON(),
-      url: function (extent) {
+      // tslint:disable-next-line:typedef
+      url(extent) {
         return (
           'https://ahocevar.com/geoserver/wfs?service=WFS&' +
           'version=1.1.0&request=GetFeature&typename=osm:water_areas&' +
@@ -321,13 +316,8 @@ export class UtilsService {
       }),
     });
     const key = '28yG78XW8reuo3cAMW7j';
-    const attributions =
-      '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> ' +
-      '<a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>';
-
     const raster = new TileLayer({
       source: new XYZ({
-        attributions: attributions,
         url: 'https://api.maptiler.com/tiles/satellite/{z}/{x}/{y}.jpg?key=' + key,
         maxZoom: 20,
       }),
@@ -352,25 +342,25 @@ export class UtilsService {
     });
 
     const styles = {
-      'Point': new Style({
-        image: image,
+      Point: new Style({
+        image,
       }),
-      'LineString': new Style({
+      LineString: new Style({
         stroke: new Stroke({
           color: 'green',
           width: 1,
         }),
       }),
-      'MultiLineString': new Style({
+      MultiLineString: new Style({
         stroke: new Stroke({
           color: 'green',
           width: 1,
         }),
       }),
-      'MultiPoint': new Style({
-        image: image,
+      MultiPoint: new Style({
+        image,
       }),
-      'MultiPolygon': new Style({
+      MultiPolygon: new Style({
         stroke: new Stroke({
           color: 'yellow',
           width: 1,
@@ -379,7 +369,7 @@ export class UtilsService {
           color: 'rgba(255, 255, 0, 0.1)',
         }),
       }),
-      'Polygon': new Style({
+      Polygon: new Style({
         stroke: new Stroke({
           color: 'blue',
           lineDash: [4],
@@ -389,7 +379,7 @@ export class UtilsService {
           color: 'rgba(0, 0, 255, 0.1)',
         }),
       }),
-      'GeometryCollection': new Style({
+      GeometryCollection: new Style({
         stroke: new Stroke({
           color: 'magenta',
           width: 2,
@@ -405,7 +395,7 @@ export class UtilsService {
           }),
         }),
       }),
-      'Circle': new Style({
+      Circle: new Style({
         stroke: new Stroke({
           color: 'red',
           width: 2,
@@ -416,51 +406,52 @@ export class UtilsService {
       }),
     };
 
-    const styleFunction = function (feature) {
+    // tslint:disable-next-line:only-arrow-functions typedef
+    const styleFunction = function(feature) {
       return styles[feature.getGeometry().getType()];
     };
 
     const geojsonObject = {
-      'type': 'FeatureCollection',
-      'crs': {
-        'type': 'name',
-        'properties': {
-          'name': 'EPSG:3857',
+      type: 'FeatureCollection',
+      crs: {
+        type: 'name',
+        properties: {
+          name: 'EPSG:3857',
         },
       },
-      'features': [
+      features: [
         {
-          'type': 'Feature',
-          'geometry': {
-            'type': 'Point',
-            'coordinates': [0, 0],
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [0, 0],
           },
         },
         {
-          'type': 'Feature',
-          'geometry': {
-            'type': 'LineString',
-            'coordinates': [
+          type: 'Feature',
+          geometry: {
+            type: 'LineString',
+            coordinates: [
               [4e6, -2e6],
               [8e6, 2e6],
             ],
           },
         },
         {
-          'type': 'Feature',
-          'geometry': {
-            'type': 'LineString',
-            'coordinates': [
+          type: 'Feature',
+          geometry: {
+            type: 'LineString',
+            coordinates: [
               [4e6, 2e6],
               [8e6, -2e6],
             ],
           },
         },
         {
-          'type': 'Feature',
-          'geometry': {
-            'type': 'Polygon',
-            'coordinates': [
+          type: 'Feature',
+          geometry: {
+            type: 'Polygon',
+            coordinates: [
               [
                 [-5e6, -1e6],
                 [-3e6, -1e6],
@@ -471,10 +462,10 @@ export class UtilsService {
           },
         },
         {
-          'type': 'Feature',
-          'geometry': {
-            'type': 'MultiLineString',
-            'coordinates': [
+          type: 'Feature',
+          geometry: {
+            type: 'MultiLineString',
+            coordinates: [
               [
                 [-1e6, -7.5e5],
                 [-1e6, 7.5e5],
@@ -495,10 +486,10 @@ export class UtilsService {
           },
         },
         {
-          'type': 'Feature',
-          'geometry': {
-            'type': 'MultiPolygon',
-            'coordinates': [
+          type: 'Feature',
+          geometry: {
+            type: 'MultiPolygon',
+            coordinates: [
               [
                 [
                   [-5e6, 6e6],
@@ -530,24 +521,24 @@ export class UtilsService {
           },
         },
         {
-          'type': 'Feature',
-          'geometry': {
-            'type': 'GeometryCollection',
-            'geometries': [
+          type: 'Feature',
+          geometry: {
+            type: 'GeometryCollection',
+            geometries: [
               {
-                'type': 'LineString',
-                'coordinates': [
+                type: 'LineString',
+                coordinates: [
                   [-5e6, -5e6],
                   [0, -5e6],
                 ],
               },
               {
-                'type': 'Point',
-                'coordinates': [4e6, -5e6],
+                type: 'Point',
+                coordinates: [4e6, -5e6],
               },
               {
-                'type': 'Polygon',
-                'coordinates': [
+                type: 'Polygon',
+                coordinates: [
                   [
                     [1e6, -6e6],
                     [3e6, -6e6],
@@ -589,33 +580,25 @@ export class UtilsService {
   }
 
   getKML(): any {
-    const key = '28yG78XW8reuo3cAMW7j';
-    const attributions =
-      '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> ' +
-      '<a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>';
 
-    const raster = new TileLayer({
-      source: new XYZ({
-        attributions: attributions,
-        url: 'https://api.maptiler.com/tiles/satellite/{z}/{x}/{y}.jpg?key=' + key,
-        maxZoom: 20,
-      }),
+    const fons = new TileLayer({
+      source: new OSM()
     });
 
     const vector = new VectorLayer({
       source: new VectorSource({
-        url: 'data/kml/2012-02-10.kml',
+        url: '../../assets/doc.kml',
         format: new KML(),
       }),
     });
 
     return new Map({
-      layers: [raster, vector],
+      layers: [fons, vector],
       target: document.getElementById('map'),
       view: new View({
-        center: [876970.8463461736, 5859807.853963373],
+        center: this.getCentre('EPSG:25831'),
         projection: 'EPSG:3857',
-        zoom: 10,
+        zoom: 8,
       }),
     });
   }

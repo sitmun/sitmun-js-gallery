@@ -13,7 +13,6 @@ import {WfsComponent} from './components/wfs/wfs.component';
 import {GeojsonComponent} from './components/geojson/geojson.component';
 import {KmlComponent} from './components/kml/kml.component';
 import {GmlComponent} from './components/gml/gml.component';
-import {ShapeFileComponent} from './components/shape-file/shape-file.component';
 
 const routes: Routes = [
   { path: '', component: GridComponent },
@@ -28,8 +27,7 @@ const routes: Routes = [
   { path: 'wfs', component: WfsComponent },
   { path: 'geojson', component: GeojsonComponent },
   { path: 'kml', component: KmlComponent },
-  { path: 'gml', component: GmlComponent },
-  { path: 'shapefile', component: ShapeFileComponent }
+  { path: 'gml', component: GmlComponent }
 ];
 
 @NgModule({
