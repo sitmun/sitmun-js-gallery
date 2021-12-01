@@ -27,7 +27,7 @@ export class GmlComponent implements OnInit {
     );
     register(proj4);
 
-    // this.map = this.utilsService.getGML();
+    this.map = this.utilsService.getGML();
   }
 
 }

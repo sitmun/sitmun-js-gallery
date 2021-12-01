@@ -1,0 +1,1587 @@
+{
+  "type" : "FeatureCollection",
+  "name" : "DIBA_PUE1M161P",
+  "features" : [
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4545951001831727, 41.57478554657764 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL JOAN",
+        "ID_PLANOL" : "c-82",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ELS PLANS DE FERRAN",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-82_cal_joan.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.458162866268367, 41.57480778540622 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CASA VELLA DE FERRAN",
+        "ID_PLANOL" : "c-83",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ELS PLANS DE FERRAN",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-83_casa_vella_ferran.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4633278143776687, 41.577249823912695 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL GOTZO DE DALT",
+        "ID_PLANOL" : "c-84",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ELS PLANS DE FERRAN",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Inventari del Patrimoni Cultural CatalÃ  / Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-84_cal_gotzo_dalt.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4909521804922998, 41.57564100646331 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "LA MUNTANYETA",
+        "ID_PLANOL" : "c-86",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "InclÃ²s en hÃ bitat interÃ¨s comunitari (9540)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-86_muntanyeta.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.5058369798645774, 41.57882980447438 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL BIOSCA",
+        "ID_PLANOL" : "c-87",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "20. RÃšSTIC",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-87_cal_biosca.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4563858449236002, 41.57178102240331 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CASA GRAN DE FERRAN",
+        "ID_PLANOL" : "c-88",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ELS PLANS DE FERRAN",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-88_casa_gran_ferran.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.455190711352898, 41.569900260033286 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL MARIANO",
+        "ID_PLANOL" : "c-89",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ELS PLANS DE FERRAN",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : " Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-89_cal_mariano.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.457298927143561, 41.569453725115935 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL JAN",
+        "ID_PLANOL" : "c-90",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ELS PLANS DE FERRAN",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Dins la zona d'afectaciÃ³ de la C-241c",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-90_cal_jan.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.451086363337327, 41.56152459024611 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL TEULER",
+        "ID_PLANOL" : "c-92",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "LA GODA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-92_cal_teuler.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.453517543259287, 41.56066977533205 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CA L'ALZINA",
+        "ID_PLANOL" : "c-93",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "LA GODA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-93_ca_alzina.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4565706608799704, 41.558288924010085 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL QUILDO",
+        "ID_PLANOL" : "c-95",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "LA GODA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-95_cal_quildo.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4594281279381727, 41.558390570683926 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL SOLER",
+        "ID_PLANOL" : "c-96",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "LA GODA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-96_cal_soler.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4378022125618743, 41.62769094059201 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL  TALLÃ“",
+        "ID_PLANOL" : "c-1",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "PORQUERISSES",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Ã€rea d'InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-01_cal_tallo.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.470904780491013, 41.63030777309089 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL GALINDAINES",
+        "ID_PLANOL" : "c-3",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "SANTA MARIA DEL CAMÃ",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Dins la zona compresa entre la lÃ­nia dâ€™edificaciÃ³ i la carretera i de la zona dâ€™afectaciÃ³ de la A-2",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-03_cal_galindaines.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4734830353746262, 41.6285649918607 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CA L'ALBAREDA",
+        "ID_PLANOL" : "c-4",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "SANTA MARIA DEL CAMÃ",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "L'esglÃ©sia de la Mare de DÃ¨u del CamÃ­ estÃ  inclosa a l'Inventari del Patrimoni Cultural CatalÃ  (Veciana) /Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)/ Dins la zona compresa entre la lÃ­nia dâ€™edificaciÃ³ i la carretera i de la zona dâ€™afectaciÃ³ de la N - II a",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-04_ca_albareda.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.473926562291557, 41.62818520779906 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "LA  RECTORIA",
+        "ID_PLANOL" : "c-5",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "SANTA MARIA DEL CAMÃ",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona/ Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA) / Dins la zona compresa entre la lÃ­nia dâ€™edificaciÃ³ i la carretera i de la zona dâ€™afectaciÃ³ de la N - II a",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-05_rectoria.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4410421485332534, 41.619941387726186 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "EL VIOLÃ",
+        "ID_PLANOL" : "c-6",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "PORQUERISSES",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / InclÃ²s dintre hÃ bitat interÃ¨s comunitari (9240+9540) / Dins la zona compresa entre la lÃ­nia dâ€™edificaciÃ³ i la carretera i de la zona dâ€™afectaciÃ³ de la N - II a",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-06_violi.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.451245784598025, 41.619636470285194 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "FOC ENCÃ‰S",
+        "ID_PLANOL" : "c-7",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "PORQUERISSES",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona/Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA) / InclÃ²s en hÃ bitat interÃ¨s comunitari (9530)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-07_foc_ences.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4821864536532794, 41.62492493526212 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL RABASSARET",
+        "ID_PLANOL" : "c-8",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ALBARELLS",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "InclÃ²s en hÃ bitat interÃ¨s comunitari (1520)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-08_rabassaret.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.476056363139249, 41.622341525036866 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "ALBARELLS",
+        "ID_PLANOL" : "c-9",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ALBARELLS",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona/Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-09_albarells.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.476367863062038, 41.62212192400771 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL MORERA",
+        "ID_PLANOL" : "c-10",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ALBARELLS",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Inventari del Patrimoni Cultural CatalÃ / Mapa de bÃ©ns DiputaciÃ³ de Barcelona/Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-10_cal-morera.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4743616163132625, 41.62147482614607 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL GOLFES",
+        "ID_PLANOL" : "c-11",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ALBARELLS",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-11_cal_golfes.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4859338031875011, 41.61679043388161 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL PADÃ“",
+        "ID_PLANOL" : "c-12",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ALBARELLS",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "InclÃ²s en hÃ bitat interÃ¨s comunitari (1520)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-12_cal_pado.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4184603162541887, 41.61400555932315 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL MANEL (CARBASSÃ)",
+        "ID_PLANOL" : "c-13",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CARBASSÃ",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / Element dins el sÃ²l de reserva per lâ€™afectaciÃ³ del sistema ferroviari  (SAF), previst en el PDU de lâ€™Eix transversal ferroviari.",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-13_cal_manel.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.417644343058504, 41.60866217280774 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL  TOLOSA",
+        "ID_PLANOL" : "c-14",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "TOLOSA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / Les edificacions complementÃ ries C, D i E es troben dins la zona compresa entre la lÃ­nia dâ€™edificaciÃ³ i la carretera i de la zona dâ€™afectaciÃ³ de la BV-2234\nÃ€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-14_cal_tolosa.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4305658231006213, 41.61000041525922 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL BALSELL",
+        "ID_PLANOL" : "c-15",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CARBASÃ",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-15_cal_balsell.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4311322573970078, 41.607916391126174 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL BORRÃ€S",
+        "ID_PLANOL" : "c-17",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CARBASSÃ",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-17_cal_borras.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4680564750261653, 41.60897072993998 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL GALÃ",
+        "ID_PLANOL" : "c-18",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ALBARELLS",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-18_cal_gali.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4377243494043228, 41.582086211729866 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "MOLÃ DE CONTRAST",
+        "ID_PLANOL" : "c-66",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CONTRAST",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / InclÃ²s dintre hÃ bitat interÃ¨s comunitari (92A0+9340)/Ã€rea d'InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-66_moli_contrast.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4455963471550668, 41.581777260394055 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "BELLESTALL",
+        "ID_PLANOL" : "c-67",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CONTRAST",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-67_bellestall.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.457760869051804, 41.585274664390795 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL CASETA",
+        "ID_PLANOL" : "c-68",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ELS PLANS DE FERRAN",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "InclÃ²s en hÃ bitat interÃ¨s comunitari (9530)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-68_cal_caseta.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4581893896108091, 41.5802327493485 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL QUICO",
+        "ID_PLANOL" : "c-69",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ELS PLANS DE FERRAN",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-69_cal_quico.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.467215471661082, 41.58157470974984 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "ELS CONCOS",
+        "ID_PLANOL" : "c-70",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ELS PLANS DE FERRAN",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "InclÃ²s en hÃ bitat interÃ¨s comunitari (9530)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-70_concos.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.475600879482223, 41.58531231976788 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL CASANOVA",
+        "ID_PLANOL" : "c-71",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ELS PLANS DE FERRAN",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-71_cal_casanova.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.475835341715608, 41.5804701462495 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL GOTZO",
+        "ID_PLANOL" : "c-72",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ELS PLANS DE FERRAN",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / InclÃ²s en hÃ bitat interÃ¨s comunitari (9530)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-72_cal_gotzo.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.511203220309095, 41.58638213862461 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL TORELLÃ“",
+        "ID_PLANOL" : "c-73",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-73_cal_torellÃ³.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.510956955983584, 41.585926619737656 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL TORELLÃ“  VELL",
+        "ID_PLANOL" : "c-75",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-75_cal_torellÃ³_vell.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.5135313163856159, 41.5854676185024 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL SOLER MAROLTA",
+        "ID_PLANOL" : "c-76",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Inventari del Patrimoni Cultural CatalÃ  / Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-76_cal_soler_marolta.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.518735166752681, 41.58530817839604 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL GORRO",
+        "ID_PLANOL" : "c-77",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-77_cal_gorro.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.508962482498302, 41.58393553959916 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CA L'ARIBAU DE LA NOU",
+        "ID_PLANOL" : "c-78",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "InclÃ²s en hÃ bitat interÃ¨s comunitari (9540)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-78_cal_aribau_nou.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.443887636188064, 41.57622713054646 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL GOMÃ€",
+        "ID_PLANOL" : "c-80",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CONTRAST",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-80_cal_gomÃ .JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4449219443114802, 41.57524784270572 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL RAMONET",
+        "ID_PLANOL" : "c-81",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CONTRAST",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-81_cal_ramonet.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4957828127895747, 41.58681682408376 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL FIOL",
+        "ID_PLANOL" : "c-52",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / InclÃ²s en hÃ bitat interÃ¨s comunitari (9540)/ Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-52_cal_fiol.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4986188832172953, 41.58861863188124 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CA L'ARIBAU",
+        "ID_PLANOL" : "c-53",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / Les edificacions es troben dins la zona dâ€™afectaciÃ³ de la BV-2212 i entre la lÃ­nia dâ€™edificaciÃ³ i la carretera/ Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-53_ca_aribau.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.5045608534762114, 41.59375519658501 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL MANEL (CLARIANA)",
+        "ID_PLANOL" : "c-55",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-55_cal_manel_(clariana).JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.5013616361692481, 41.591790189413764 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL MAGINES",
+        "ID_PLANOL" : "c-56",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-56_cal_magines.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.5013916536048273, 41.59164917183174 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL JAN (LA RAVAL)",
+        "ID_PLANOL" : "c-57",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-57_cal_jan_(raval).JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.5013909421964597, 41.59148802842468 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL MANEL VELL (LA RAVAL)",
+        "ID_PLANOL" : "c-58",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-58_cal_manel_VELL_(raval).JP"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.5012381219586388, 41.59142442849614 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL FLANXO",
+        "ID_PLANOL" : "c-59",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-59_cal_flanxo.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.501103345610542, 41.59155065971386 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL SOLÃ‰",
+        "ID_PLANOL" : "c-60",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Inventari del Patrimoni Cultural CatalÃ  / Mapa de bÃ©ns DiputaciÃ³ de Barcelona/Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-60_cal_solÃ©.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.5150087213587964, 41.59192614233776 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL FELIP",
+        "ID_PLANOL" : "c-61",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-61_cal_felip.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4064243066262698, 41.58511367058769 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL SOLER",
+        "ID_PLANOL" : "c-62",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ROCAMORA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-62_cal_soler.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.402667552098934, 41.57969377423393 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CA L'ESTEVE DE BAIX",
+        "ID_PLANOL" : "c-63",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ROCAMORA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-63_ca_esteve_baix.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4332495308630595, 41.57906230106264 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL GALLINAIRE",
+        "ID_PLANOL" : "c-65",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CONTRAST",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-65_cal_gallinaire.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4682157488024612, 41.609035810900394 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL JOAN JEPET",
+        "ID_PLANOL" : "c-19",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ALBARELLS",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-19_cal_joan_jepet.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4243495362333174, 41.602462083151494 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "MAS SEGURA",
+        "ID_PLANOL" : "c-20",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ROCAMORA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Inventari del Patrimoni Cultural CatalÃ  / Mapa de bÃ©ns DiputaciÃ³ de Barcelona / InclÃ²s dintre hÃ bitat interÃ¨s comunitari (9540)/ Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-20_mas_segura.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.43511349732243, 41.60205836528479 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "MOLÃ DE LES VINYES",
+        "ID_PLANOL" : "c-21",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Inventari del Patrimoni Cultural CatalÃ  / Mapa de bÃ©ns DiputaciÃ³ de Barcelona/Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-21_moli_vinyes.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4470600777959384, 41.602247504900966 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL TENDER",
+        "ID_PLANOL" : "c-23",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-23_cal_tender.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4594990288921217, 41.60455763320722 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL TORRUELL",
+        "ID_PLANOL" : "c-24",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-24_cal_torruell.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4189952477576924, 41.59431208374549 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL  MANACO",
+        "ID_PLANOL" : "c-25",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ROCAMORA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona/Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-25_cal_manaco.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4206840603548883, 41.594206411699695 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL PELEGRÃ",
+        "ID_PLANOL" : "c-26",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ROCAMORA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-26_cal_pelegri.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4208769727718116, 41.59402018757535 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL MANEL (ROCAMORA)",
+        "ID_PLANOL" : "c-27",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ROCAMORA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-27_cal_manel_(rocamora).jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4177439192329209, 41.59300183579184 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL DURAN",
+        "ID_PLANOL" : "c-28",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ROCAMORA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / InclÃ²s en hÃ bitat interÃ¨s comunitari (9530+9240)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-28_cal_duran.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4192446102466116, 41.59325837426425 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL PUJÃ“",
+        "ID_PLANOL" : "c-29",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ROCAMORA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona/ Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-29_cal_pujÃ³.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.440547922334313, 41.596656842770194 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "GRANGES FONTANELLES",
+        "ID_PLANOL" : "c-30",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "InclÃ²s en hÃ bitat interÃ¨s comunitari (9530) / Dins la zona d'afectaciÃ³ de la BV-2231",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-30_granges_fontanelles.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4437521986142432, 41.59698560970365 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "GRANGES  VILAPLANA",
+        "ID_PLANOL" : "c-31",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-31_granges_vilaplana.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.445748760077985, 41.596702066386726 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "GRANGES DAVINS",
+        "ID_PLANOL" : "c-32",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-32_granges_davins.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4493129582419557, 41.596793258854476 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "LA CASETA",
+        "ID_PLANOL" : "c-33",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-33_caseta.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4562482444426128, 41.59747242197525 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL MACARI",
+        "ID_PLANOL" : "c-35",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Inventari del Patrimoni Cultural CatalÃ  / Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-35_cal_macari.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4605927571414015, 41.6002505949765 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL JEPET DELS POUS, CAL SEBASTIÃ€ VELL, CAL NICOLAU",
+        "ID_PLANOL" : "c-36",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-36_cal_jepet_pous_sebastiÃ _v"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4614076968443825, 41.59968740627784 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL SERRATS",
+        "ID_PLANOL" : "c-37",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-37_cal_serrats.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4730575233507284, 41.60130268779144 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "MAS FRANÃ‡Ã“ VELL",
+        "ID_PLANOL" : "c-39",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-39_mas_franÃ§Ã³_vell.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4735012396291503, 41.5997054412608 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "MAS FRANÃ‡Ã“",
+        "ID_PLANOL" : "c-40",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-40_mas_franÃ§Ã³.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.442915570997692, 41.59252153594242 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CA L'IGNASI",
+        "ID_PLANOL" : "c-41",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-41_ca_ignasi.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4430561719140058, 41.592477235046424 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CA LA JERONIMA",
+        "ID_PLANOL" : "c-42",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-42_ca_jeronima.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4468567654999085, 41.589504490892175 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL JEPET DEL MAGRE",
+        "ID_PLANOL" : "c-43",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-43_cal_jepet_magre.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4468309416182523, 41.58942064786597 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "MAS PERDIGÃ“",
+        "ID_PLANOL" : "c-44",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-44_mas_perdigÃ³.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4609757852119842, 41.58886296876605 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "MAS D'EN TORRES",
+        "ID_PLANOL" : "c-45",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)/ InclÃ²s dintre hÃ bitat interÃ¨s comunitari (9540)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-45_mas_torres.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4647113650128383, 41.58898002507867 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL FELIX",
+        "ID_PLANOL" : "c-46",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "InclÃ²s dintre hÃ bitat interÃ¨s comunitari (9540)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-46_cal_felix.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.474760235875048, 41.587561458329525 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL PRIM",
+        "ID_PLANOL" : "c-47",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-47_cal_prim.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4770490024608982, 41.58772609829141 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL ROSSENDO",
+        "ID_PLANOL" : "c-48",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "InclÃ²s dintre hÃ bitat interÃ¨s comunitari (92A0)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-48_cal_rosendo.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4772022883794445, 41.58753880335429 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL MAGRE",
+        "ID_PLANOL" : "c-49",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / InclÃ²s en hÃ bitat interÃ¨s comunitari (92A0) / Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-49_cal_magre.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.491105249632555, 41.58821122040432 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL TORIGA",
+        "ID_PLANOL" : "c-50",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona/ Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-50_cal_toriga.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4901033828323536, 41.58713452553981 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL PORCATER",
+        "ID_PLANOL" : "c-51",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona/ Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-51_cal_porcater.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4568533186926722, 41.56037476814022 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL PERE",
+        "ID_PLANOL" : "c-94",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "LA GODA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-94_cal_pere.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4669690115848852, 41.62958577090265 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL ROSSÃ“",
+        "ID_PLANOL" : "c-2",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "PORQUERISSES",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Inventari del Patrimoni Cultural CatalÃ  / Mapa de bÃ©ns DiputaciÃ³ de Barcelona / Dins la zona compresa entre la lÃ­nia dâ€™edificaciÃ³ i la carretera i de la zona dâ€™afectaciÃ³ de la A-2 i la N-II a",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-02_cal_rossa.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4179233628031975, 41.607454139137396 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL MARCÃ“",
+        "ID_PLANOL" : "c-16",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "TOLOSA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-16_cal_marcÃ³.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.5033284090775731, 41.58471825227686 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL PUJOL",
+        "ID_PLANOL" : "c-74",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona / Dins la zona d'afectaciÃ³ de la BV-2212",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-74_cal_pujol.jpg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.5017686584606043, 41.58084584047974 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL PAU",
+        "ID_PLANOL" : "c-79",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CLARIANA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-79_cal_pau.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4245179542887536, 41.58303318053998 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL MENSA",
+        "ID_PLANOL" : "c-64",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "CONTRAST",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Inventari del Patrimoni Cultural CatalÃ  / Mapa de bÃ©ns DiputaciÃ³ de Barcelona/Ã€rea dâ€™InterÃ¨s ArqueolÃ²gic (AIA)",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-64_cal_mensa.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4487480653830727, 41.60368086845305 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL RABASER",
+        "ID_PLANOL" : "c-22",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : null,
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-22_cal_rabaser.JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4511562715882156, 41.59891789156203 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL SEBASTIÃ€",
+        "ID_PLANOL" : "c-34",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-34_cal_sebastiÃ .JPG"
+      }
+    },
+    {
+      "type" : "Feature",
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 1.4679628775997176, 41.597928638668975 ]
+      },
+      "properties" : {
+        "MUN_INE" : "08008",
+        "NOM" : "CAL PLANA GALLINA",
+        "ID_PLANOL" : "c-38",
+        "FIG_PLANEJ" : "Pla especial catÃ leg masies, cases rurals i altres edificacions. DOGC 7135- 6/6/2016 [NOTA: Les dades recollides corresponen a l'aprovaciÃ³ referenciada i no inclouen possibles canvis posteriors]",
+        "ADRECA" : "ARGENÃ‡OLA",
+        "QUAL_SOL" : "25. ESPAIS NATURALS PROTEGITS",
+        "GRAU_PROT" : "Mapa de bÃ©ns DiputaciÃ³ de Barcelona",
+        "IMATGE" : "http://sitmun.diba.cat/sitmun2/dades/adjunts/PUE1M/08008/fotos/c-38_cal_plana_gallina.JPG"
+      }
+    }
+  ]
+}

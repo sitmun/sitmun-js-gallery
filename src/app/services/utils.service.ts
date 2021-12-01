@@ -7,20 +7,18 @@ import KML from 'ol/format/KML';
 import GeoJSON from 'ol/format/GeoJSON';
 import WFS from 'ol/format/WFS';
 import WMTS from 'ol/source/WMTS';
+import GML from 'ol/format/GML';
 import Projection from 'ol/proj/Projection';
 import { Image as ImageLayer, Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
 import { transform } from 'ol/proj';
 import { defaults as defaultInteractions } from 'ol/interaction';
 import { transformExtent } from 'ol/proj';
-import WMTSTileGrid from 'ol/tilegrid/WMTS';
 import {get as getProjection} from 'ol/proj';
-import {getTopLeft, getWidth} from 'ol/extent';
-import XYZ from 'ol/source/XYZ';
 import {bbox as bboxStrategy} from 'ol/loadingstrategy';
-import Circle from 'ol/geom/Circle';
-import Feature from 'ol/Feature';
 import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
 import {Vector as VectorSource} from 'ol/source';
+import {optionsFromCapabilities} from 'ol/source/WMTS';
+import WMTSCapabilities from 'ol/format/WMTSCapabilities';
 
 interface MapaFons {
   id: number;
@@ -110,7 +108,7 @@ export class UtilsService {
 
   getMyView(): any {
     return new View({
-      projection: 'EPSG:3857',
+      projection: getProjection('EPSG:3857'),
       center: this.getCentre('EPSG:25831'),
       zoom: this.getDefaultZoom()
     });
@@ -148,7 +146,7 @@ export class UtilsService {
 
   getProjection(): any {
     return new Projection({
-      code: this.workspaceApp.epsg,
+      code: getProjection(this.workspaceApp.epsg),
       extent: this.getExtent()
     });
   }
@@ -250,44 +248,41 @@ export class UtilsService {
 
   // GESTIO DE CAPES COMPATIBLES
 
-  getWMTS(): any{
-    const projection = getProjection('EPSG:3857');
-    const projectionExtent = projection.getExtent();
-    const size = getWidth(projectionExtent) / 256;
-    const resolutions = new Array(19);
-    const matrixIds = new Array(19);
-    for (let z = 0; z < 19; ++z) {
-      resolutions[z] = size / Math.pow(2, z);
-      matrixIds[z] = z;
-    }
-    return new Map({
-      layers: [
-        new TileLayer({
-          source: new OSM(),
-        }),
-        new TileLayer({
-          opacity: 0.7,
-          source: new WMTS({
-            url: 'https://mrdata.usgs.gov/mapcache/wmts',
-            layer: 'sgmc2',
-            matrixSet: 'GoogleMapsCompatible',
-            format: 'image/png',
-            projection: getProjection('EPSG:3857'),
-            tileGrid: new WMTSTileGrid({
-              origin: getTopLeft(projectionExtent),
-              resolutions,
-              matrixIds,
+  getWMTScapabilities(): any{
+    const parser = new WMTSCapabilities();
+    let map;
+
+    fetch('https://geoserveis.icgc.cat/icc_mapesmultibase/utm/wmts/topo/1.0.0/WMTSCapabilities.xml')
+      // tslint:disable-next-line:only-arrow-functions
+      .then(function(response): any {
+        return response.text();
+        // tslint:disable-next-line:only-arrow-functions
+      }).then(function(text): any {
+        const result = parser.read(text);
+        const options = optionsFromCapabilities(result, {
+          layer: 'Capes ortofotografiques',
+          matrixSet: 'EPSG:25831'
+        });
+
+        map = new Map({
+          layers: [
+            new TileLayer({
+              source: new OSM(),
+              opacity: 0.7,
             }),
-            wrapX: true,
+            new TileLayer({
+              opacity: 1,
+              source: new WMTS(options),
+            })
+          ],
+          target: 'map',
+          view: new View({
+            center: [449372, 4601581.5],
+            zoom: 5,
           }),
-        }),
-      ],
-      target: 'map',
-      view: new View({
-        center: this.getCentre('EPSG:25831'),
-        zoom: this.getDefaultZoom(),
-      }),
-    });
+        });
+      });
+    return map;
   }
 
   getWFS(): any{
@@ -296,8 +291,8 @@ export class UtilsService {
       // tslint:disable-next-line:typedef
       url(extent) {
         return (
-          'https://ahocevar.com/geoserver/wfs?service=WFS&' +
-          'version=1.1.0&request=GetFeature&typename=osm:water_areas&' +
+          'https://geoserveis.icgc.cat/servei/catalunya/divisions-administratives/wfs?' +
+          'version=2.0.0&request=getfeature&service=wfs&typenames=osm:divisions_administratives_capsdemunicipi_capmunicipi&' +
           'outputFormat=application/json&srsname=EPSG:3857&' +
           'bbox=' +
           extent.join(',') +
@@ -315,19 +310,15 @@ export class UtilsService {
         }),
       }),
     });
-    const key = '28yG78XW8reuo3cAMW7j';
     const raster = new TileLayer({
-      source: new XYZ({
-        url: 'https://api.maptiler.com/tiles/satellite/{z}/{x}/{y}.jpg?key=' + key,
-        maxZoom: 20,
-      }),
+      source: new OSM()
     });
 
     return new Map({
       layers: [raster, vector],
       target: document.getElementById('map'),
       view: new View({
-        center: [-8908887.277395891, 5381918.072437216],
+        center: this.getCentre('EPSG:25831'),
         maxZoom: 19,
         zoom: 12,
       }),
@@ -335,248 +326,27 @@ export class UtilsService {
   }
 
   getGeoJSON(): any {
-    const image = new CircleStyle({
-      radius: 5,
-      fill: null,
-      stroke: new Stroke({color: 'red', width: 1}),
-    });
-
-    const styles = {
-      Point: new Style({
-        image,
-      }),
-      LineString: new Style({
-        stroke: new Stroke({
-          color: 'green',
-          width: 1,
-        }),
-      }),
-      MultiLineString: new Style({
-        stroke: new Stroke({
-          color: 'green',
-          width: 1,
-        }),
-      }),
-      MultiPoint: new Style({
-        image,
-      }),
-      MultiPolygon: new Style({
-        stroke: new Stroke({
-          color: 'yellow',
-          width: 1,
-        }),
-        fill: new Fill({
-          color: 'rgba(255, 255, 0, 0.1)',
-        }),
-      }),
-      Polygon: new Style({
-        stroke: new Stroke({
-          color: 'blue',
-          lineDash: [4],
-          width: 3,
-        }),
-        fill: new Fill({
-          color: 'rgba(0, 0, 255, 0.1)',
-        }),
-      }),
-      GeometryCollection: new Style({
-        stroke: new Stroke({
-          color: 'magenta',
-          width: 2,
-        }),
-        fill: new Fill({
-          color: 'magenta',
-        }),
-        image: new CircleStyle({
-          radius: 10,
-          fill: null,
-          stroke: new Stroke({
-            color: 'magenta',
-          }),
-        }),
-      }),
-      Circle: new Style({
-        stroke: new Stroke({
-          color: 'red',
-          width: 2,
-        }),
-        fill: new Fill({
-          color: 'rgba(255,0,0,0.2)',
-        }),
-      }),
-    };
-
-    // tslint:disable-next-line:only-arrow-functions typedef
-    const styleFunction = function(feature) {
-      return styles[feature.getGeometry().getType()];
-    };
-
-    const geojsonObject = {
-      type: 'FeatureCollection',
-      crs: {
-        type: 'name',
-        properties: {
-          name: 'EPSG:3857',
-        },
-      },
-      features: [
-        {
-          type: 'Feature',
-          geometry: {
-            type: 'Point',
-            coordinates: [0, 0],
-          },
-        },
-        {
-          type: 'Feature',
-          geometry: {
-            type: 'LineString',
-            coordinates: [
-              [4e6, -2e6],
-              [8e6, 2e6],
-            ],
-          },
-        },
-        {
-          type: 'Feature',
-          geometry: {
-            type: 'LineString',
-            coordinates: [
-              [4e6, 2e6],
-              [8e6, -2e6],
-            ],
-          },
-        },
-        {
-          type: 'Feature',
-          geometry: {
-            type: 'Polygon',
-            coordinates: [
-              [
-                [-5e6, -1e6],
-                [-3e6, -1e6],
-                [-4e6, 1e6],
-                [-5e6, -1e6],
-              ],
-            ],
-          },
-        },
-        {
-          type: 'Feature',
-          geometry: {
-            type: 'MultiLineString',
-            coordinates: [
-              [
-                [-1e6, -7.5e5],
-                [-1e6, 7.5e5],
-              ],
-              [
-                [1e6, -7.5e5],
-                [1e6, 7.5e5],
-              ],
-              [
-                [-7.5e5, -1e6],
-                [7.5e5, -1e6],
-              ],
-              [
-                [-7.5e5, 1e6],
-                [7.5e5, 1e6],
-              ],
-            ],
-          },
-        },
-        {
-          type: 'Feature',
-          geometry: {
-            type: 'MultiPolygon',
-            coordinates: [
-              [
-                [
-                  [-5e6, 6e6],
-                  [-3e6, 6e6],
-                  [-3e6, 8e6],
-                  [-5e6, 8e6],
-                  [-5e6, 6e6],
-                ],
-              ],
-              [
-                [
-                  [-2e6, 6e6],
-                  [0, 6e6],
-                  [0, 8e6],
-                  [-2e6, 8e6],
-                  [-2e6, 6e6],
-                ],
-              ],
-              [
-                [
-                  [1e6, 6e6],
-                  [3e6, 6e6],
-                  [3e6, 8e6],
-                  [1e6, 8e6],
-                  [1e6, 6e6],
-                ],
-              ],
-            ],
-          },
-        },
-        {
-          type: 'Feature',
-          geometry: {
-            type: 'GeometryCollection',
-            geometries: [
-              {
-                type: 'LineString',
-                coordinates: [
-                  [-5e6, -5e6],
-                  [0, -5e6],
-                ],
-              },
-              {
-                type: 'Point',
-                coordinates: [4e6, -5e6],
-              },
-              {
-                type: 'Polygon',
-                coordinates: [
-                  [
-                    [1e6, -6e6],
-                    [3e6, -6e6],
-                    [2e6, -4e6],
-                    [1e6, -6e6],
-                  ],
-                ],
-              },
-            ],
-          },
-        },
-      ],
-    };
-
-    const vectorSource = new VectorSource({
-      features: new GeoJSON().readFeatures(geojsonObject),
-    });
-
-    vectorSource.addFeature(new Feature(new Circle([5e6, 7e6], 1e6)));
-
-    const vectorLayer = new VectorLayer({
-      source: vectorSource,
-      style: styleFunction,
-    });
 
     return new Map({
       layers: [
         new TileLayer({
           source: new OSM(),
+          opacity: 0.7
         }),
-        vectorLayer,
+        new VectorLayer({
+          source: new VectorSource({
+            format: new GeoJSON(),
+            url: '../../assets/geojson.json',
+          }),
+        }),
       ],
       target: 'map',
       view: new View({
-        center: [0, 0],
-        zoom: 2,
+        center: this.getCentre('EPSG:25831'),
+        zoom: 10,
       }),
     });
+
   }
 
   getKML(): any {
@@ -603,5 +373,26 @@ export class UtilsService {
     });
   }
 
-  getGML(): any {}
+  getGML(): any {
+    const fons = new TileLayer({
+      source: new OSM()
+    });
+
+    const vector = new VectorLayer({
+      source: new VectorSource({
+        url: '../../assets/GML_Parcela.gml',
+        format: new GML()
+      })
+    });
+
+    return new Map({
+      layers: [fons, vector],
+      target: document.getElementById('map'),
+      view: new View({
+        center: this.getCentre('EPSG:25831'),
+        projection: 'EPSG:3857',
+        zoom: 10,
+      }),
+    });
+  }
 }

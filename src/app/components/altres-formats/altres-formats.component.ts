@@ -27,7 +27,7 @@ export class AltresFormatsComponent implements OnInit {
     );
     register(proj4);
 
-    this.map = this.utilsService.getWMTS();
+    this.map = this.utilsService.getWMTScapabilities();
   }
 
 }
