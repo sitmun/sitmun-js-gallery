@@ -286,36 +286,28 @@ export class UtilsService {
   }
 
   getWFS(): any{
-    const vectorSource = new VectorSource({
-      format: new GeoJSON(),
-      // tslint:disable-next-line:typedef
-      url(extent) {
-        return (
-          'https://geoserveis.icgc.cat/servei/catalunya/divisions-administratives/wfs?' +
-          'version=2.0.0&request=getfeature&service=wfs&typenames=osm:divisions_administratives_capsdemunicipi_capmunicipi&' +
-          'outputFormat=application/json&srsname=EPSG:3857&' +
-          'bbox=' +
-          extent.join(',') +
-          ',EPSG:3857'
-        );
-      },
-      strategy: bboxStrategy,
-    });
-    const vector = new VectorLayer({
-      source: vectorSource,
-      style: new Style({
-        stroke: new Stroke({
-          color: 'rgba(0, 0, 255, 1.0)',
-          width: 2,
-        }),
+    const vectorSource2 = new VectorLayer({
+      source: new VectorSource({
+        format: new GeoJSON(),
+        url: 'https://geoserveis.icgc.cat/servei/catalunya/divisions-administratives/wfs?version=2.0.0&request=getfeature&service=wfs&typenames=osm:divisions_administratives_capsdemunicipi_capmunicipi&srsname=EPSG:3857&&outputFormat=geojson',
       }),
+      style: new Style({
+        image: new CircleStyle({
+          radius: 10,
+          fill: null,
+          stroke: new Stroke({
+            color: 'magenta',
+          })
+        })
+      })
     });
+
     const raster = new TileLayer({
       source: new OSM()
     });
 
     return new Map({
-      layers: [raster, vector],
+      layers: [raster, vectorSource2],
       target: document.getElementById('map'),
       view: new View({
         center: this.getCentre('EPSG:25831'),
