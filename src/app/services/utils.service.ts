@@ -248,43 +248,6 @@ export class UtilsService {
 
   // GESTIO DE CAPES COMPATIBLES
 
-  getWMTScapabilities(): any{
-    const parser = new WMTSCapabilities();
-    let map;
-
-    fetch('https://geoserveis.icgc.cat/icc_mapesmultibase/utm/wmts/topo/1.0.0/WMTSCapabilities.xml')
-      // tslint:disable-next-line:only-arrow-functions
-      .then(function(response): any {
-        return response.text();
-        // tslint:disable-next-line:only-arrow-functions
-      }).then(function(text): any {
-        const result = parser.read(text);
-        const options = optionsFromCapabilities(result, {
-          layer: 'Capes ortofotografiques',
-          matrixSet: 'EPSG:25831'
-        });
-
-        map = new Map({
-          layers: [
-            new TileLayer({
-              source: new OSM(),
-              opacity: 0.7,
-            }),
-            new TileLayer({
-              opacity: 1,
-              source: new WMTS(options),
-            })
-          ],
-          target: 'map',
-          view: new View({
-            center: [449372, 4601581.5],
-            zoom: 5,
-          }),
-        });
-      });
-    return map;
-  }
-
   getWFS(): any{
     const vectorSource2 = new VectorLayer({
       source: new VectorSource({
@@ -373,7 +336,11 @@ export class UtilsService {
     const vector = new VectorLayer({
       source: new VectorSource({
         url: '../../assets/GML_Parcela.gml',
-        format: new GML()
+        // Algun lloc he llegit que hi ha un bug que enlloc de GML sha de posar WFS, pero no va.
+        format: new GML({
+          srsName: 'EPSG: 25831'
+        }),
+        projection: 'EPSG:3857'
       })
     });
 
