@@ -6,8 +6,8 @@ import OSM from 'ol/source/OSM';
 import KML from 'ol/format/KML';
 import GeoJSON from 'ol/format/GeoJSON';
 import WFS from 'ol/format/WFS';
-import WMTS from 'ol/source/WMTS';
 import GML from 'ol/format/GML';
+import GML32 from 'ol/format/GML32';
 import Projection from 'ol/proj/Projection';
 import { Image as ImageLayer, Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
 import { transform } from 'ol/proj';
@@ -17,8 +17,8 @@ import {get as getProjection} from 'ol/proj';
 import {bbox as bboxStrategy} from 'ol/loadingstrategy';
 import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
 import {Vector as VectorSource} from 'ol/source';
-import {optionsFromCapabilities} from 'ol/source/WMTS';
-import WMTSCapabilities from 'ol/format/WMTSCapabilities';
+import Point from 'ol/geom/Point';
+import * as olProj from 'ol/proj';
 
 interface MapaFons {
   id: number;
@@ -330,19 +330,51 @@ export class UtilsService {
 
   getGML(): any {
     const fons = new TileLayer({
-      source: new OSM()
+      source: new OSM(),
+      opacity: 0.2
     });
+
+    const format2 = new GML32({
+      srsName: 'EPSG:25831'
+    });
+
+    // MANERA 1 DE LLEGIR LES FEATURES
+    fetch('../../assets/GML_Parcela.gml')
+      .then(function(response): any {
+        return response.text();
+      }).then(function(text): any {
+        const parser = new WFS({
+          featureNS: 'http://www.opengis.net/wfs/2.0'
+        });
+        const features3 = parser.readFeatures(text);
+        console.log(features3);
+    });
+
+    // MANERA 2 DE LLEGIR LES FEATURES
+    const features = format2.readFeatures('../../assets/GML_Parcela.gml', {
+      featureProjection: 'EPSG:25831',
+      dataProjection: 'EPSG:3857'
+    });
+
+    console.log(features);
 
     const vector = new VectorLayer({
       source: new VectorSource({
         url: '../../assets/GML_Parcela.gml',
-        // Algun lloc he llegit que hi ha un bug que enlloc de GML sha de posar WFS, pero no va.
-        format: new GML({
-          srsName: 'EPSG: 25831'
-        }),
+        format: format2,
         projection: 'EPSG:3857'
       })
     });
+
+    /*
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < features.length; i++) {
+      const coordinates = [parseFloat(features[i].get('long')), parseFloat(features[i].get('lat'))];
+      const geom = new Point(olProj.transform(coordinates, 'EPSG:25831', 'EPSG:3857'));
+      features[i].setGeometry(geom);
+    }
+    vector.getSource().addFeatures(features);
+    */
 
     return new Map({
       layers: [fons, vector],
@@ -354,4 +386,5 @@ export class UtilsService {
       }),
     });
   }
+
 }
