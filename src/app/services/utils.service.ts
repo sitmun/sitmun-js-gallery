@@ -8,6 +8,7 @@ import GeoJSON from 'ol/format/GeoJSON';
 import WFS from 'ol/format/WFS';
 import GML from 'ol/format/GML';
 import GML32 from 'ol/format/GML32';
+import GML3 from 'ol/format/GML3';
 import Projection from 'ol/proj/Projection';
 import { Image as ImageLayer, Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
 import { transform } from 'ol/proj';
@@ -331,50 +332,20 @@ export class UtilsService {
   getGML(): any {
     const fons = new TileLayer({
       source: new OSM(),
-      opacity: 0.2
+      opacity: 0.3
     });
-
-    const format2 = new GML32({
-      srsName: 'EPSG:25831'
-    });
-
-    // MANERA 1 DE LLEGIR LES FEATURES
-    fetch('../../assets/GML_Parcela.gml')
-      .then(function(response): any {
-        return response.text();
-      }).then(function(text): any {
-        const parser = new WFS({
-          featureNS: 'http://www.opengis.net/wfs/2.0'
-        });
-        const features3 = parser.readFeatures(text);
-        console.log(features3);
-    });
-
-    // MANERA 2 DE LLEGIR LES FEATURES
-    const features = format2.readFeatures('../../assets/GML_Parcela.gml', {
-      featureProjection: 'EPSG:25831',
-      dataProjection: 'EPSG:3857'
-    });
-
-    console.log(features);
 
     const vector = new VectorLayer({
       source: new VectorSource({
         url: '../../assets/GML_Parcela.gml',
-        format: format2,
-        projection: 'EPSG:3857'
+        format: new WFS({
+          glmFormat: new GML3(),
+          srsName: 'EPSG:25831',
+          version: '1.1.0'
+        }),
+        projection: 'EPSG:25831'
       })
     });
-
-    /*
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < features.length; i++) {
-      const coordinates = [parseFloat(features[i].get('long')), parseFloat(features[i].get('lat'))];
-      const geom = new Point(olProj.transform(coordinates, 'EPSG:25831', 'EPSG:3857'));
-      features[i].setGeometry(geom);
-    }
-    vector.getSource().addFeatures(features);
-    */
 
     return new Map({
       layers: [fons, vector],
@@ -385,6 +356,10 @@ export class UtilsService {
         zoom: 10,
       }),
     });
+  }
+
+  getGLM2(): any{
+
   }
 
 }
