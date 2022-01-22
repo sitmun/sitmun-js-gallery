@@ -6,8 +6,6 @@ import OSM from 'ol/source/OSM';
 import KML from 'ol/format/KML';
 import GeoJSON from 'ol/format/GeoJSON';
 import WFS from 'ol/format/WFS';
-import GML from 'ol/format/GML';
-import GML32 from 'ol/format/GML32';
 import GML3 from 'ol/format/GML3';
 import Projection from 'ol/proj/Projection';
 import { Image as ImageLayer, Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
@@ -15,11 +13,8 @@ import { transform } from 'ol/proj';
 import { defaults as defaultInteractions } from 'ol/interaction';
 import { transformExtent } from 'ol/proj';
 import {get as getProjection} from 'ol/proj';
-import {bbox as bboxStrategy} from 'ol/loadingstrategy';
 import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
 import {Vector as VectorSource} from 'ol/source';
-import Point from 'ol/geom/Point';
-import * as olProj from 'ol/proj';
 
 interface MapaFons {
   id: number;

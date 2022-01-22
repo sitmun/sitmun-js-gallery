@@ -62,8 +62,6 @@ export class AltresFormatsComponent implements OnInit {
       });
     });
 
-    console.log(options);
-
     const LayerWMTS = new TileLayer({
       source: new WMTS(options),
       opacity: 1

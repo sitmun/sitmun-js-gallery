@@ -80,6 +80,19 @@ changeBackgroundMap(): any {{'{'}}
     <div class="col-sm-6">
       <b>CODI FITXER HTML</b>
       <pre class="codi">
+&lt;div class="row">
+  &lt;div class="col-sm-6">
+    &lt;mat-form-field appearance="fill">
+      &lt;mat-label>Mapa de fons:&lt;/mat-label>
+      &lt;mat-select [(value)]="this.mapaFons" (selectionChange)="this.changeBackgroundMap()">
+        &lt;mat-option *ngFor="let mapa of this.mapes" [value]="mapa.id">
+          {{"{"}} mapa.nom {{"}"}}
+        &lt;/mat-option>
+      &lt;/mat-select>
+    &lt;/mat-form-field>
+  &lt;/div>
+  &lt;div class="col-sm-6">&lt;/div>
+&lt;/div>
 <&zwj;div class="row">
   <&zwj;div class="col-sm-12 map-container">
     <&zwj;app-map [map]="map"><&zwj;/app-map>

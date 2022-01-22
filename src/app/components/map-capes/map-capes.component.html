@@ -104,7 +104,35 @@ canviOpacitat(): any {{'{'}}
     <div class="col-sm-6">
       <b>CODI FITXER HTML</b>
       <pre class="codi">
-<&zwj;div class="row">
+&lt;div class="row">
+  &lt;div class="col-sm-2">
+    &lt;mat-form-field appearance="fill">
+      &lt;mat-label>Capes Visibles:&lt;/mat-label>
+      &lt;mat-select [formControl]="this.capes" (selectionChange)="this.changeLayers()" multiple>
+        &lt;mat-option *ngFor="let capa of this.capesWMS" [value]="capa.id">
+          {{"{"}}{{"{"}} capa.nom {{"}"}}{{"}"}}
+        &lt;/mat-option>
+      &lt;/mat-select>
+    &lt;/mat-form-field>
+  &lt;/div>
+  &lt;div class="col-sm-2">
+    &lt;mat-form-field appearance="fill">
+      &lt;mat-label>Capa Seleccionada:&lt;/mat-label>
+      &lt;mat-select [formControl]="this.capaSeleccionada" (selectionChange)="this.opacityFunction()">
+        &lt;mat-option *ngFor="let capa of this.capesWMS" [value]="capa.id">
+          {{"{"}}{{"{"}} capa.nom {{"}"}}{{"}"}}
+        &lt;/mat-option>
+      &lt;/mat-select>
+    &lt;/mat-form-field>
+  &lt;/div>
+  &lt;div class="col-sm-2 my-auto">
+    &lt;p class="mb-0">Opacitat:&lt;/p>
+    &lt;input type="range" min="0" max="1" step="0.1" id="opSlider2" (change)="this.canviOpacitat()" [formControl]="this.opacitatCapaSeleccionada" >
+  &lt;/div>
+  &lt;div class="col-sm-6">
+  &lt;/div>
+&lt;/div>
+<&lt;div class="row">
   <&zwj;div class="col-sm-12 map-container">
     <&zwj;app-map [map]="map"><&zwj;/app-map>
   <&zwj;/div>
