@@ -10,13 +10,6 @@
   </div>
 
   <div class="row mb-2">
-    <div class="col-sm-12 map-container">
-      <app-map [map]="map"></app-map>
-    </div>
-  </div>
-
-  <div class="row mb-2">
-
     <div class="col-sm-12">
       <pre class="codi">
 Documentació OpenLayers sobre GML
@@ -33,7 +26,81 @@ schemaLocation  |  Optional schemaLocation to use when writing out the GML, this
 hasZ            |  If coordinates have a Z value.
       </pre>
     </div>
-
   </div>
+
+  <div class="row mb-2">
+  <div class="col-sm-12">
+  <pre class="codi">
+Exemple de codi GML per JavaScript que funciona en solucions INSPIRE i AD HOC. Hem de fer nosaltres mateixos un
+parser per llegir les features.
+
+&lt;html lang="en">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;title>OSM Vector Tiles&lt;/title>
+  &lt;link rel="stylesheet" href="ol/ol.css" type="text/css">
+  &lt;script src="ol/ol.js">&lt;/script>
+  &lt;style>
+    .map {{"{"}}
+      width: 100%;
+      height:800px;
+    }
+    .map {{"{"}}
+      background: #f8f4f0;
+    }
+  &lt;/style>
+&lt;/head>
+&lt;body>
+&lt;div id="map" class="map">&lt;/div>
+&lt;script>
+  var map = new ol.Map({{"{"}}
+    target: 'map',
+    layers: [
+      new ol.layer.Tile({{"{"}}
+        source: new ol.source.OSM()
+      }),
+      new ol.layer.Vector({{"{"}}
+        source: new ol.source.Vector({{"{"}}
+          format: new ol.format.WFS({{"{"}}
+            version: '2.0.0',
+            featureNS: 'http://inspire.ec.europa.eu/schemas/ad/4.0',
+            featureType: 'Address',
+          }),
+          url: 'SPADB-AD-wgs84.gml',
+          projection: 'EPSG:4326'
+        })
+      }),
+    ],
+    view: new ol.View({{"{"}}
+      center: ol.proj.fromLonLat([37.41, 8.82]),
+      zoom: 4
+    })
+  });
+
+  url = 'SPADB-AD.gml'
+  fetch(url)
+    .then(response => response.text())
+    .then(xml => {{"{"}}
+      const parser = new ol.format.WFS({{"{"}}
+        version: '2.0.0',
+        featureNS: 'http://inspire.ec.europa.eu/schemas/ad/4.0',
+        featureType: 'Address',
+      });
+      const features = parser.readFeatures(xml);
+      console.log(features.length);
+      console.log(typeof(features[0]));
+      console.log(features[0].getGeometryName());
+      console.log(features[0].getId());
+      console.log(features[0].getKeys());
+      console.log(features[0].get('position'));
+      console.log(features[0].getGeometry());
+    });
+&lt;/script>
+&lt;/body>
+&lt;/html>
+  </pre>
+    </div>
+    </div>
+
 
 </div>

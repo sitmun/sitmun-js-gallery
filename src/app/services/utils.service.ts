@@ -5,8 +5,6 @@ import ImageWMS from 'ol/source/ImageWMS';
 import OSM from 'ol/source/OSM';
 import KML from 'ol/format/KML';
 import GeoJSON from 'ol/format/GeoJSON';
-import WFS from 'ol/format/WFS';
-import GML3 from 'ol/format/GML3';
 import Projection from 'ol/proj/Projection';
 import { Image as ImageLayer, Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
 import { transform } from 'ol/proj';
@@ -15,6 +13,7 @@ import { transformExtent } from 'ol/proj';
 import {get as getProjection} from 'ol/proj';
 import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
 import {Vector as VectorSource} from 'ol/source';
+import * as shp from 'shpjs';
 
 interface MapaFons {
   id: number;
@@ -231,7 +230,7 @@ export class UtilsService {
     });
   }
 
-  // PER FER LA GESTIÓ DE CAPESA
+  // PER FER LA GESTIÓ DE CAPES
 
   readLayers(): Capa[] {
     const capes: Capa[] = [];
@@ -324,37 +323,34 @@ export class UtilsService {
     });
   }
 
-  getGML(): any {
-    const fons = new TileLayer({
-      source: new OSM(),
-      opacity: 0.3
-    });
+  getShapeFile(): any{
+    let geojsonO;
 
-    const vector = new VectorLayer({
-      source: new VectorSource({
-        url: '../../assets/GML_Parcela.gml',
-        format: new WFS({
-          glmFormat: new GML3(),
-          srsName: 'EPSG:25831',
-          version: '1.1.0'
-        }),
-        projection: 'EPSG:25831'
-      })
+    // tslint:disable-next-line:only-arrow-functions typedef
+    shp('../../assets/aigua-punts.zip').then(function(geojson){
+      console.log(geojson);
+      geojsonO = geojson;
     });
 
     return new Map({
-      layers: [fons, vector],
-      target: document.getElementById('map'),
+      layers: [
+        new TileLayer({
+          source: new OSM(),
+          opacity: 0.7
+        }),
+        new VectorLayer({
+          source: new VectorSource({
+            format: new GeoJSON(),
+            features: new GeoJSON().readFeatures(geojsonO)
+          }),
+        })
+      ],
+      target: 'map',
       view: new View({
         center: this.getCentre('EPSG:25831'),
-        projection: 'EPSG:3857',
         zoom: 10,
       }),
     });
-  }
-
-  getGLM2(): any{
-
   }
 
 }

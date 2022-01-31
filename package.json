@@ -32,6 +32,8 @@
     "requirejs": "^2.3.6",
     "roboto-fontface": "^0.10.0",
     "rxjs": "~6.6.0",
+    "shapefile": "^0.6.6",
+    "shpjs": "^4.0.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },

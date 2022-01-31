@@ -7,8 +7,8 @@ import proj4 from 'proj4';
 import { register } from 'ol/proj/proj4';
 import DoubleClickZoom from 'ol/interaction/DoubleClickZoom';
 import { UtilsService } from '../../services/utils.service';
-import { transformExtent } from 'ol/proj';
 import FullScreen from 'ol/control/FullScreen';
+import DragPan from 'ol/interaction/DragPan';
 
 @Component({
   selector: 'app-zoom',
@@ -39,6 +39,7 @@ export class ZoomComponent implements OnInit {
       this.map.addControl(new Zoom());
       this.map.addInteraction(new DoubleClickZoom());
       this.map.addControl(new FullScreen());
+      this.map.addInteraction(new DragPan());
       this.map.addControl(new ZoomToExtent({
         extent: this.utilsService.getExtent()
       }));

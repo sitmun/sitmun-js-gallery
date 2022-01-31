@@ -1,0 +1,21 @@
+<div class="container-fluid main-container">
+
+  <div class="row">
+    <div class="col-sm-11">
+      <h1>ShapeFile - Compatibilitat</h1>
+    </div>
+    <div class="col-sm-1">
+      <a routerLink="/" class="cool-link">BACK</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <input type = "button" (click)="this.loadShp()" value = "Display">
+    </div>
+    <div class="col-sm-12 map-container mb-5" style="height: 500px;">
+      <app-map [map]="map"></app-map>
+    </div>
+  </div>
+
+</div>

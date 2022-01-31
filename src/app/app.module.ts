@@ -27,6 +27,7 @@ import { WfsComponent } from './components/wfs/wfs.component';
 import { GeojsonComponent } from './components/geojson/geojson.component';
 import { KmlComponent } from './components/kml/kml.component';
 import { GmlComponent } from './components/gml/gml.component';
+import { ShapeComponent } from './components/shape/shape.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { GmlComponent } from './components/gml/gml.component';
     WfsComponent,
     GeojsonComponent,
     KmlComponent,
-    GmlComponent
+    GmlComponent,
+    ShapeComponent
   ],
   imports: [
     BrowserModule,
