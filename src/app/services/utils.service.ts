@@ -13,7 +13,7 @@ import { transformExtent } from 'ol/proj';
 import {get as getProjection} from 'ol/proj';
 import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
 import {Vector as VectorSource} from 'ol/source';
-import * as shp from 'shpjs';
+
 
 interface MapaFons {
   id: number;
@@ -323,34 +323,19 @@ export class UtilsService {
     });
   }
 
-  getShapeFile(): any{
-    let geojsonO;
-
-    // tslint:disable-next-line:only-arrow-functions typedef
-    shp('../../assets/aigua-punts.zip').then(function(geojson){
-      console.log(geojson);
-      geojsonO = geojson;
-    });
-
-    return new Map({
+   getShapeFile(): any {
+    return  new Map({
       layers: [
         new TileLayer({
           source: new OSM(),
           opacity: 0.7
-        }),
-        new VectorLayer({
-          source: new VectorSource({
-            format: new GeoJSON(),
-            features: new GeoJSON().readFeatures(geojsonO)
-          }),
         })
       ],
-      target: 'map',
+      target: document.getElementById('map'),
       view: new View({
-        center: this.getCentre('EPSG:25831'),
-        zoom: 10,
-      }),
+        center: [449372, 4601581.5],
+        zoom: 5,
+      })
     });
   }
-
 }
