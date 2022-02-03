@@ -5,7 +5,6 @@ import OSM from 'ol/source/OSM';
 import View from 'ol/View';
 import proj4 from 'proj4';
 import { register } from 'ol/proj/proj4';
-import * as shp from 'shpjs';
 import { UtilsService } from '../../services/utils.service';
 import * as shapefile from 'shapefile';
 import {Vector as VectorSource} from 'ol/source';
@@ -48,25 +47,17 @@ export class ShapeComponent implements OnInit {
         zoom: 5,
       })
     });
-
   }
 
   // tslint:disable-next-line:typedef
   async loadShp() {
-    // tslint:disable-next-line:only-arrow-functions typedef
-    /* await shp('').then(function(geojson){
-      console.log(geojson);
-    }); */
     let layer;
     await shapefile.open('../../assets/aigua-punts')
       .then(source => source.read()
         // tslint:disable-next-line:typedef only-arrow-functions
         .then(function(result){
-          console.log(result);
-          const resul2 = JSON.stringify(result.value.geometry);
-          console.log(resul2);
           const vectorSource = new VectorSource({
-            features: new GeoJSON().readFeatures(resul2),
+            features: new GeoJSON({ featureProjection: 'EPSG:3857' }).readFeatures(result.value.geometry),
           });
           layer = new VectorLayer({
             source: vectorSource,
@@ -83,5 +74,4 @@ export class ShapeComponent implements OnInit {
         }));
     this.map.addLayer(layer);
   }
-
 }
