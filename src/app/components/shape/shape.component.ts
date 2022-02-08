@@ -38,7 +38,7 @@ export class ShapeComponent implements OnInit {
   // tslint:disable-next-line:typedef
   async loadShp() {
     let layer;
-    await shapefile.open('../../assets/aigua-punts')
+    await shapefile.open('/assets/aigua-punts')
       .then(source => source.read()
         // tslint:disable-next-line:typedef only-arrow-functions
         .then(function(result) {
