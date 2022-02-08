@@ -286,7 +286,7 @@ export class UtilsService {
         new VectorLayer({
           source: new VectorSource({
             format: new GeoJSON(),
-            url: '/assets/geojson.json',
+            url: '/sitmun-js-gallery/assets/geojson.json',
           }),
         }),
       ],
@@ -307,7 +307,7 @@ export class UtilsService {
 
     const vector = new VectorLayer({
       source: new VectorSource({
-        url: '/assets/doc.kml',
+        url: '/sitmun-js-gallery/assets/doc.kml',
         format: new KML(),
       }),
     });
