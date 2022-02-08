@@ -15,4 +15,68 @@
     </div>
   </div>
 
+  <div class="row mb-2">
+    <div class="col-sm-6">
+      <app-scaleline [map]="map"></app-scaleline>
+    </div>
+    <div class="col-sm-6" align="right">
+      <app-mouse-position [map]="map" positionTemplate="{x}, {y} m"></app-mouse-position>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <b>CODI FITXER TYPESCRIPT</b>
+      <pre class="codi">
+this.map = new Map({{"{"}}
+  layers: [
+    new TileLayer({{"{"}}
+    source: new OSM(),
+    opacity: 0.7
+  })
+  ],
+  target: document.getElementById('map'),
+  view: new View({{"{"}}
+    center: [449372, 4601581.5],
+    zoom: 5,
+  })
+});
+
+const parser = new WMTSCapabilities();
+let options;
+
+await fetch('https://geoserveis.icgc.cat/icc_mapesmultibase/utm/wmts/topo/1.0.0/WMTSCapabilities.xml')
+  .then(function(response): any {{"{"}}
+    return response.text();
+  }).then(function(text): any {{"{"}}
+    const result = parser.read(text);
+    options = optionsFromCapabilities(result, {{"{"}}
+    layer: 'ortogris',
+    matrixSet: 'UTM25831'
+  });
+});
+
+const LayerWMTS = new TileLayer({{"{"}}
+    source: new WMTS(options),
+    opacity: 1
+});
+
+this.map.addLayer(LayerWMTS);
+      </pre>
+    </div>
+    <div class="col-sm-6">
+      <b>CODI FITXER HTML</b>
+      <pre class="codi">
+<&zwj;div class="row">
+  <&zwj;div class="col-sm-12 map-container">
+    <&zwj;app-map [map]="map"><&zwj;/app-map>
+  <&zwj;/div>
+<&zwj;/div>
+      </pre>
+    </div>
+  </div>
+
 </div>
+
+
+

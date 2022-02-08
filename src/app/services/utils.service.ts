@@ -333,8 +333,8 @@ export class UtilsService {
       ],
       target: document.getElementById('map'),
       view: new View({
-        center: [449372, 4601581.5],
-        zoom: 5,
+        center: this.getCentre('EPSG:25831'),
+        zoom: 11,
       })
     });
   }

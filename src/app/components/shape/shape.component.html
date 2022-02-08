@@ -18,4 +18,81 @@
     </div>
   </div>
 
+  <div class="row mb-2">
+    <div class="col-sm-6">
+      <app-scaleline [map]="map"></app-scaleline>
+    </div>
+    <div class="col-sm-6" align="right">
+      <app-mouse-position [map]="map" positionTemplate="{x}, {y} m"></app-mouse-position>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <b>CODI FITXER TYPESCRIPT</b>
+      <pre class="codi">
+this.map = new Map({{"{"}}
+        layers: [
+    new TileLayer({{"{"}}
+        source: new OSM(),
+      opacity: 0.7
+    }),
+    new VectorLayer({{"{"}}
+        source: new VectorSource({{"{"}}
+        url: '../../assets/doc.kml',
+        format: new KML(),
+      }),
+    });
+  ],
+  target: 'map',
+  view: new View({{"{"}}
+    center: this.getCentre('EPSG:25831'),
+    zoom: 11,
+  })
+{{"}"}});
+async loadShp() {{"{"}}
+  let layer;
+  await shapefile.open('../../assets/aigua-punts')
+    .then(source => source.read()
+      // tslint:disable-next-line:typedef only-arrow-functions
+      .then(function(result) {{"{"}}
+    layer = result;
+  }));
+  const vectorSource = new VectorSource({{"{"}}
+    features: new GeoJSON({{"{"}}featureProjection: 'EPSG:3857'}).readFeatures(layer.value.geometry),
+  });
+  const vector = new VectorLayer({{"{"}}
+    source: vectorSource,
+    style: new Style({{"{"}}
+      image: new CircleStyle({{"{"}}
+        radius: 10,
+        fill: null,
+        stroke: new Stroke({{"{"}}
+      color: 'magenta',
+        })
+      })
+    })
+  });
+  this.map.addLayer(vector);
+}
+      </pre>
+    </div>
+    <div class="col-sm-6">
+      <b>CODI FITXER HTML</b>
+      <pre class="codi">
+<&zwj;div class="row">
+    <&zwj;div class="col-sm-12">
+      <&zwj;input type = "button" (click)="this.loadShp()" value = "Display">
+    <&zwj;/div>
+  <&zwj;div class="col-sm-12 map-container">
+    <&zwj;app-map [map]="map"><&zwj;/app-map>
+  <&zwj;/div>
+<&zwj;/div>
+      </pre>
+    </div>
+  </div>
+
 </div>
+
+
+
