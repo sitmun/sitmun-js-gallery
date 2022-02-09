@@ -174,14 +174,14 @@ export class UtilsService {
       new ImageLayer({
         source: new ImageWMS({
           url: 'https://sitmun.diba.cat/wms/servlet/BUE1M',
-          projection: this.getProjection(),
+          projection: getProjection(this.workspaceApp.epsg),
           params: {LAYERS: 'BUE1M_412A_Z,BUE1M_221A,BUE1M_211A,BUE1M_211L,BUE1M_211P,BUE1M_111L,BUE1M_111P,BUE1M_111T,BUE1M_311T'}
         })
       }),
       new ImageLayer({
         source: new ImageWMS({
           url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
-          projection: this.getProjection(),
+          projection: getProjection(this.workspaceApp.epsg),
           params: {LAYERS: 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
         })
       })
@@ -189,7 +189,8 @@ export class UtilsService {
   }
 
   getMap2(): any {
-    return new Map({
+    // tslint:disable-next-line:no-shadowed-variable
+    const map  = new Map({
       controls: [],
       interactions: defaultInteractions({
         doubleClickZoom: true,
@@ -201,6 +202,8 @@ export class UtilsService {
       target: 'map',
       view: this.getMyView()
     });
+    console.log(map);
+    return map;
   }
 
   returnOSM(): any {
@@ -214,7 +217,7 @@ export class UtilsService {
     return new ImageLayer({
       source: new ImageWMS({
         url: 'https://sitmun.diba.cat/wms/servlet/BUE1M',
-        projection: this.getProjection(),
+        projection: getProjection(this.workspaceApp.epsg),
         params: {LAYERS: 'BUE1M_412A_Z,BUE1M_221A,BUE1M_211A,BUE1M_211L,BUE1M_211P,BUE1M_111L,BUE1M_111P,BUE1M_111T,BUE1M_311T'}
       })
     });
@@ -224,7 +227,7 @@ export class UtilsService {
     return new ImageLayer({
       source: new ImageWMS({
         url: 'http://sitmun.diba.cat/wms/servlet/CAE1M',
-        projection: this.getProjection(),
+        projection: getProjection(this.workspaceApp.epsg),
         params: {LAYERS: 'MTE50_Disponibilitat,CAE1M_141A,CAE1M_112L_FF,CAE1M_122P_FF,CAE1M_123P_FF'}
       })
     });
@@ -333,8 +336,8 @@ export class UtilsService {
       ],
       target: document.getElementById('map'),
       view: new View({
-        center: this.getCentre('EPSG:25831'),
-        zoom: 11,
+        center: [449372, 4601581.5],
+        zoom: 5,
       })
     });
   }
