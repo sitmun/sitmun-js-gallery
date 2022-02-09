@@ -250,17 +250,17 @@ export class UtilsService {
     const vectorSource2 = new VectorLayer({
       source: new VectorSource({
         format: new GeoJSON(),
-        url: 'https://geoserveis.icgc.cat/servei/catalunya/divisions-administratives/wfs?version=2.0.0&request=getfeature&service=wfs&typenames=osm:divisions_administratives_capsdemunicipi_capmunicipi&srsname=EPSG:3857&&outputFormat=geojson',
+        url: 'https://geoserveis.icgc.cat/servei/catalunya/divisions-administratives/wfs?version=2.0.0&request=getfeature&service=wfs&&&typenames=divisions_administratives_comarques_1000000&srsname=EPSG:3857&&outputFormat=geojson',
       }),
       style: new Style({
-        image: new CircleStyle({
-          radius: 10,
-          fill: null,
-          stroke: new Stroke({
-            color: 'magenta',
-          })
-        })
-      })
+        stroke: new Stroke({
+          color: 'blue',
+          width: 3,
+        }),
+        fill: new Fill({
+          color: 'rgba(0, 0, 255, 0.1)',
+        }),
+      }),
     });
 
     const raster = new TileLayer({
