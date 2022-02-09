@@ -273,7 +273,7 @@ export class UtilsService {
       view: new View({
         center: this.getCentre('EPSG:25831'),
         maxZoom: 19,
-        zoom: 12,
+        zoom: 10,
       }),
     });
   }
